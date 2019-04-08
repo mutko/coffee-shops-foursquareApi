@@ -1,0 +1,34 @@
+{
+  "name": "coffee-shops-foursquareApi",
+  "version": "1.0.0",
+  "description": "List of coffee shops based on geolocation, using foursquare API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mutko/coffee-shops-foursquareApi.git"
+  },
+  "keywords": [],
+  "author": "Branko Bozovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mutko/coffee-shops-foursquareApi/issues"
+  },
+  "homepage": "https://github.com/mutko/coffee-shops-foursquareApi#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}

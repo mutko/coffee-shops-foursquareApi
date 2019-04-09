@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coffee Shops</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <h1>Find Coffee Shops</h1>
 
-</body>
+    <form>
+      <input type="number" placeholder="Enter radius" id="search-field" class="search-field" />
+      <button type="submit" id="btn-search">Submit</button>
+    </form>
+
+    <section class="results">
+      <ul id="results-list" class="results__list"></ul>
+    </section>
+  </body>
 </html>

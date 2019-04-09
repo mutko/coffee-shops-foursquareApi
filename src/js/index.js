@@ -1,3 +1,35 @@
+import Search from './models/Search';
+import * as searchView from './views/searchView';
+import { elements } from './views/base';
 
+/** global state of app
 
-// https://api.foursquare.com/v2/venues/explore?ll=44.80272,20.4085905&v=20190123&client_id=T13MCDTYIWC2JVTEIBOTE24UDDOVFQUXIPXOXV3N2A13FRIC&client_secret=VKLJLPLDIC4GHQTAEUMLU0XUWAQOQVONCIRYWD55SVJ4NJVT&limit=10&section=coffee&openNow=1&radius=1000&sortByDistance=1
+  * Search object
+  * Curret venue object
+  * Liked venue
+*/
+const state = {};
+
+const controlSearch = async radius => {
+  // new search object and add to state
+  state.search = new Search(radius);
+
+  // prepare UI
+  searchView.clearInput();
+  searchView.clearResults();
+
+  // search for recipes
+  await state.search.getResults();
+
+  // render results
+  searchView.renderResults(state.search.results);
+};
+
+elements.searchForm.addEventListener('click', e => {
+  e.preventDefault();
+  const radius = searchView.getInput();
+  if (radius) {
+    controlSearch(radius);
+  }
+});
+controlSearch();

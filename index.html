@@ -22,7 +22,13 @@
     <h1>Find Coffee Shops</h1>
 
     <form>
-      <input type="number" placeholder="Enter radius" id="search-field" class="search-field" />
+      <input
+        type="number"
+        placeholder="Enter radius"
+        required
+        id="search-field"
+        class="search-field"
+      />
       <label for="sort">Sort by distance</label>
       <input type="checkbox" name="sort" id="sort-by-distance" />
       <label for="open">Open now</label>
@@ -31,7 +37,7 @@
       <button type="submit" id="btn-search">Submit</button>
     </form>
 
-    <section class="results">
+    <section id="results" class="results">
       <ul id="results-list" class="results__list"></ul>
     </section>
 

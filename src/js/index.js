@@ -1,6 +1,6 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
-import { elements } from './views/base';
+import { elements, renderLoader, clearLoader } from './views/base';
 
 /** global state of app
 
@@ -18,11 +18,13 @@ const controlSearch = async (radius, sort, open) => {
   // prepare UI
   searchView.clearInput();
   searchView.clearResults();
+  renderLoader(elements.searchResults);
 
   // search for venues
   await state.search.getResults();
 
   // render results
+  clearLoader();
   searchView.renderResults(state.search.results);
 
   // just for testing DELETE for production
@@ -41,4 +43,6 @@ elements.searchForm.addEventListener('click', e => {
     controlSearch(radius, sort, open);
   }
 });
+
+// get results and render them on start
 controlSearch();

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { clientId, clientSecret } from '../helpers/config';
 import { buildMap, getLocation } from '../helpers/helpers';
 
 export default class Search {
@@ -17,7 +18,7 @@ export default class Search {
       const response = await axios(
         `https://api.foursquare.com/v2/venues/explore?ll=${this.lat},${
           this.lng
-        }&v=20190323&client_id=T13MCDTYIWC2JVTEIBOTE24UDDOVFQUXIPXOXV3N2A13FRIC&client_secret=VKLJLPLDIC4GHQTAEUMLU0XUWAQOQVONCIRYWD55SVJ4NJVT&limit=10&section=coffee&radius=${
+        }&v=20190323&client_id=${clientId}&client_secret=${clientSecret}&limit=10&section=coffee&radius=${
           this.radius
         }&sortByDistance=${this.sortByDistance}&openNow=${this.openNow}`
       );

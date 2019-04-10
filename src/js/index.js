@@ -1,4 +1,5 @@
 import Search from './models/Search';
+import Venue from './models/Venue';
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
 
@@ -11,6 +12,9 @@ import { elements, renderLoader, clearLoader } from './views/base';
 
 const state = {};
 
+/* 
+  Search controller
+*/
 const controlSearch = async (radius, sort, open) => {
   // new search object and add to state
   state.search = new Search(radius, sort, open);
@@ -46,3 +50,10 @@ elements.searchForm.addEventListener('click', e => {
 
 // get results and render them on start
 controlSearch();
+
+/*
+ Venue controller
+*/
+const v = new Venue('4c893ec5105237044947c7f1');
+v.getVenue();
+console.log(v);

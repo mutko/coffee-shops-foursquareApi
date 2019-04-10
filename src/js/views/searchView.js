@@ -2,6 +2,13 @@ import { elements } from './base';
 
 export const getInput = () => elements.searchInput.value;
 
+export const getChecked = element => {
+  if (element.checked) {
+    return 1;
+  }
+  return 0;
+};
+
 export const clearInput = () => {
   elements.searchInput.value = '';
 };

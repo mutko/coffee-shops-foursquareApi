@@ -1,5 +1,9 @@
+const id = selector => document.getElementById(selector);
+
 export const elements = {
-  searchForm: document.getElementById('btn-search'),
-  searchInput: document.getElementById('search-field'),
-  searchResultsList: document.getElementById('results-list')
+  searchForm: id('btn-search'),
+  searchInput: id('search-field'),
+  searchSort: id('sort-by-distance'),
+  searchOpen: id('open-now'),
+  searchResultsList: id('results-list')
 };

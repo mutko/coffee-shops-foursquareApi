@@ -1,5 +1,8 @@
 import Search from './models/Search';
-import Venue from './models/Venue';
+
+// TO BE IMPORTED
+// import Venue from './models/Venue';
+
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
 
@@ -50,10 +53,3 @@ elements.searchForm.addEventListener('click', e => {
 
 // get results and render them on start
 controlSearch();
-
-/*
- Venue controller
-*/
-const v = new Venue('4c893ec5105237044947c7f1');
-v.getVenue();
-console.log(v);

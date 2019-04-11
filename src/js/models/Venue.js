@@ -2,7 +2,9 @@ import axios from 'axios';
 import { clientId, clientSecret } from '../helpers/config';
 
 export default class Venue {
-  constructor(id) {
+  // NIJE POTREBAN DEFAULT URL U PRAVOM REQUST
+  // OVO JE PRIVREMENO
+  constructor(id = '4c893ec5105237044947c7f1') {
     this.id = id;
   }
 

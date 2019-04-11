@@ -19,7 +19,7 @@ export const clearResults = () => {
 const renderVenue = shop => {
   const markup = `
     <li class="venue">
-      <a href="venue-details.html?id=${shop.venue.id}" title="More info about this movie">
+      <a href="venue.html?id=${shop.venue.id}" title="More info about this movie">
           <h2>${shop.venue.name}</h2>
           <p>Udaljenost: ${shop.venue.location.distance}m</p>
           <p>Adresa: ${shop.venue.location.address}</p>

@@ -6,7 +6,9 @@ export const elements = {
   searchSort: id('sort-by-distance'),
   searchOpen: id('open-now'),
   searchResults: id('results'),
-  searchResultsList: id('results-list')
+  searchResultsList: id('results-list'),
+  coffeeShop: id('venue'),
+  shopTips: id('venue-tips')
 };
 
 export const renderLoader = parent => {

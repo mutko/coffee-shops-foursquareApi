@@ -30,8 +30,7 @@ export default class Venue {
         result.data.response.venue.bestPhoto.suffix
       }`;
     } catch (error) {
-      console.log(error);
-      alert('Something is wrong :((');
+      alert('Something is wrong!');
     }
   }
 }

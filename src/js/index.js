@@ -1,24 +1,17 @@
 import Search from './models/Search';
-
-// TO BE IMPORTED
-// import Venue from './models/Venue';
-
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
-import '../sass/style.scss';
+import '../sass/app.scss';
 
 /** global state of app
-
-  * Search object
-  * Curret venue object
-  * Liked venue or something
-*/
+ * Search object
+ * Curret venue object
+ * Liked venue or something
+ */
 
 const state = {};
 
-/* 
-  Search controller
-*/
+// Search controller
 const controlSearch = async (radius, sort, open) => {
   // new search object and add to state
   state.search = new Search(radius, sort, open);
@@ -28,15 +21,20 @@ const controlSearch = async (radius, sort, open) => {
   searchView.clearResults();
   renderLoader(elements.searchResults);
 
-  // search for venues
-  await state.search.getResults();
+  try {
+    // search for venues
+    await state.search.getResults();
 
-  // render results
-  clearLoader();
-  searchView.renderResults(state.search.results);
+    // render results
+    clearLoader();
+    searchView.renderResults(state.search.results);
 
-  // just for testing DELETE for production
-  console.log(state);
+    // just for testing DELETE this for production
+    console.log(state);
+  } catch (error) {
+    alert('Not good!');
+    clearLoader();
+  }
 };
 
 elements.searchForm.addEventListener('click', e => {
@@ -52,5 +50,5 @@ elements.searchForm.addEventListener('click', e => {
   }
 });
 
-// get results and render them on start
+// get results and render them on load
 controlSearch();

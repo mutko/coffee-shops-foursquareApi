@@ -25,7 +25,11 @@ const controlSearch = async (radius, sort, open) => {
   try {
     // search for venues
     await state.search.getResults();
+    // const lat = state.search.lat;
+    // const lng = state.search.lng;
 
+    // console.log(lat);
+    // console.log(lng);
     // render results
     clearLoader();
     searchView.renderResults(state.search.results);
@@ -37,7 +41,6 @@ const controlSearch = async (radius, sort, open) => {
     clearLoader();
   }
 };
-
 elements.searchForm.addEventListener('click', e => {
   e.preventDefault();
 

@@ -12,7 +12,7 @@ export const renderVenue = venue => {
         <p>Description ${venue.price.message}</p>
         <p>Currency ${venue.price.currency}</p>
       </p>
-      <p>Rating on foursquare: ${venue.likes}</p>
+      <p>Rating on foursquare: ${venue.rating}</p>
       <p>${venue.address}, ${venue.city}</p>
       <img src="${venue.image}" alt="Coffee Shop best photo" width="200" />
       <p>${venue.website}</p>

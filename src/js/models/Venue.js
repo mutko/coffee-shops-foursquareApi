@@ -24,7 +24,6 @@ export default class Venue {
       const result = await axios(`https://api.myjson.com/bins/1h2v10`);
       // eslint-disable-next-line prefer-destructuring
       const venue = result.data.response.venue;
-      console.log(venue);
       this.name = venue.name;
       this.address = venue.location.address;
       this.city = venue.location.city;

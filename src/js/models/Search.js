@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { clientId, clientSecret } from '../helpers/config';
-// import { buildMap, getLocation } from '../helpers/helpers';
 
 export default class Search {
   constructor(radius = 1000, sortByDistance = 1, openNow = 1) {

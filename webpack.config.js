@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     main: ['babel-polyfill', './src/js/index.js'],
-    single: ['babel-polyfill', './src/js/index-venue.js']
+    venue: ['babel-polyfill', './src/js/venueDetails.js']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -20,8 +20,8 @@ module.exports = {
       inject: false
     }),
     new HtmlWebpackPlugin({
-      filename: 'index-venue.html',
-      template: './index-venue.html',
+      filename: 'venue-details.html',
+      template: './venue-details.html',
       inject: false
     })
   ],

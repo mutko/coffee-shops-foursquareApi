@@ -1,13 +1,19 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
 import { elements, renderLoader, clearLoader } from './views/base';
+import { buildMap, getLocation } from './helpers/helpers';
 
 import '../sass/app.scss';
 
 // Search controller
 const controlSearch = async (radius, sort, open) => {
-  // new search object
+  // new search object with coords
   const search = new Search(radius, sort, open);
+
+  // get position coords
+  const position = await getLocation();
+  search.lat = position.coords.latitude;
+  search.lng = position.coords.longitude;
 
   // prepare UI
   searchView.clearInput();
@@ -18,19 +24,17 @@ const controlSearch = async (radius, sort, open) => {
     // search for venues
     await search.getResults();
 
-    // const lat = search.lat;
-    // const lng = search.lng;
-    // console.log(lat);
-    // console.log(lng);
-
     // render results
     clearLoader();
-    searchView.renderResults(search.results);
+    searchView.renderResults(search.venues);
+
+    // render map with new data
+    buildMap(search.lat, search.lng, search.venues);
 
     // just for testing DELETE this for production
     console.log(search);
   } catch (error) {
-    // NEED TO DIESPLAY SOMETHING MEANINGFULL
+    // NEED TO DISPLAY SOMETHING MEANINGFULL
     // NOT ALERT
     alert('Not good!');
     clearLoader();

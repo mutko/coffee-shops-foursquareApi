@@ -1,20 +1,17 @@
 import axios from 'axios';
 import { clientId, clientSecret } from '../helpers/config';
-import { buildMap, getLocation } from '../helpers/helpers';
+// import { buildMap, getLocation } from '../helpers/helpers';
 
 export default class Search {
   constructor(radius = 1000, sortByDistance = 1, openNow = 1) {
     this.radius = radius;
     this.sortByDistance = sortByDistance;
     this.openNow = openNow;
+    this.venues = {}; // this will be populated after getResults() is finished
   }
 
   async getResults() {
     try {
-      const position = await getLocation();
-      this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
-
       const response = await axios(
         `https://api.foursquare.com/v2/venues/explore?ll=${this.lat},${
           this.lng
@@ -22,10 +19,7 @@ export default class Search {
           this.radius
         }&sortByDistance=${this.sortByDistance}&openNow=${this.openNow}`
       );
-      this.results = response.data.response.groups[0].items;
-
-      // render map with new data
-      buildMap(this.lat, this.lng, this.results);
+      this.venues = response.data.response.groups[0].items;
     } catch (error) {
       alert(error);
     }

@@ -1,6 +1,6 @@
 import { elements } from './base';
 
-export const getInput = () => elements.searchInput.value;
+export const getInput = () => +elements.searchInput.value;
 
 export const getChecked = element => {
   if (element.checked) {

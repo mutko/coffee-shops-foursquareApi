@@ -6,6 +6,8 @@ export default class Venue {
   // OVO JE PRIVREMENO
   constructor(id = '4c893ec5105237044947c7f1') {
     this.id = id;
+    this.coords = []; // for lat and lng in buildMap()
+    this.tips = {};
   }
 
   // PRIVREMENO DA NE BIH SLAO PREMIUM REQUEST
@@ -17,9 +19,9 @@ export default class Venue {
   async getVenue() {
     try {
       const result = await axios('https://api.myjson.com/bins/1h2v10');
-      console.log(result.data.response.venue);
       // eslint-disable-next-line prefer-destructuring
       const venue = result.data.response.venue;
+      this.coords[0] = result.data.response;
       this.address = venue && venue.location && venue.location.address;
       this.city = venue && venue.location && venue.location.city;
       this.color = venue && venue.ratingColor;
@@ -42,23 +44,25 @@ export default class Venue {
         `${venue.bestPhoto.prefix}${venue.bestPhoto.width}x${venue.bestPhoto.height}${
           venue.bestPhoto.suffix
         }`;
+      // render map with new data
+      // buildMap(lat, lng);
     } catch (error) {
       alert('Error in getting coffee shop DETAILS');
     }
   }
 
-  // async getTips() {
-  //   try {
-  //     const result = await axios('https://api.myjson.com/bins/92xf8');
-  //     const tips = result.data.response.tips.items[0];
-  //     this.tips.text = tips.text;
-  //     this.tips.image = tips.photourl;
-  //     this.tips.agree = tips.agreeCount;
-  //     this.tips.disagree = tips.disagreeCount;
-  //     this.tips.user = `${tips.user.firstName} ${tips.user.lastName}`;
-  //     this.tips.userPhoto = `${tips.user.photo.prefix}240${tips.user.photo.suffix}`;
-  //   } catch (error) {
-  //     alert('Error in getting coffee shop TIPS');
-  //   }
-  // }
+  async getTips() {
+    try {
+      const result = await axios('https://api.myjson.com/bins/92xf8');
+      const tips = result.data.response.tips.items[0];
+      this.tips.text = tips.text;
+      this.tips.image = tips.photourl;
+      this.tips.agree = tips.agreeCount;
+      this.tips.disagree = tips.disagreeCount;
+      this.tips.user = `${tips.user.firstName} ${tips.user.lastName}`;
+      this.tips.userPhoto = `${tips.user.photo.prefix}240${tips.user.photo.suffix}`;
+    } catch (error) {
+      alert('Error in getting coffee shop TIPS');
+    }
+  }
 }

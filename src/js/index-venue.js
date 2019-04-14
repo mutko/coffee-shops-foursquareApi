@@ -7,24 +7,25 @@ import '../sass/app.scss';
 // Venue controller
 const controlVenue = async () => {
   const id = window.location.search.substring(4);
+
   // Prepare UI
   renderLoader(elements.coffeeShop);
-  // Create new venue
 
+  // Create new venue
   // POTREBAN JE ID DA SE PROSLEDI U PRAVOM OBJEKTU
   // ALI ZA SADA JE DEFAULT DA NE BIH TROSIO
   // PREMIUM REQUEST
 
-  const venueDetails = new Venue();
+  const singleVenue = new Venue();
 
   try {
     // Get venue data
-    await venueDetails.getVenue();
-    console.log(venueDetails);
+    await singleVenue.getVenue();
+    console.log(singleVenue);
     // Render Venue
     // console.log(venue);
     clearLoader();
-    venueView.renderVenue(venueDetails);
+    venueView.renderVenue(singleVenue);
 
     // Get tips
     //    await venue.getTips();

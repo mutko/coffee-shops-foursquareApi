@@ -4,18 +4,10 @@ import { elements, renderLoader, clearLoader } from './views/base';
 
 import '../sass/app.scss';
 
-/** global state of app
- * Search object
- * Curret venue object
- * Liked venue or something
- */
-
-const state = {};
-
 // Search controller
 const controlSearch = async (radius, sort, open) => {
-  // new search object and add to state
-  state.search = new Search(radius, sort, open);
+  // new search object
+  const search = new Search(radius, sort, open);
 
   // prepare UI
   searchView.clearInput();
@@ -24,19 +16,22 @@ const controlSearch = async (radius, sort, open) => {
 
   try {
     // search for venues
-    await state.search.getResults();
-    // const lat = state.search.lat;
-    // const lng = state.search.lng;
+    await search.getResults();
 
+    // const lat = search.lat;
+    // const lng = search.lng;
     // console.log(lat);
     // console.log(lng);
+
     // render results
     clearLoader();
-    searchView.renderResults(state.search.results);
+    searchView.renderResults(search.results);
 
     // just for testing DELETE this for production
-    console.log(state);
+    console.log(search);
   } catch (error) {
+    // NEED TO DIESPLAY SOMETHING MEANINGFULL
+    // NOT ALERT
     alert('Not good!');
     clearLoader();
   }

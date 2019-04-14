@@ -1,6 +1,11 @@
 import { elements } from './base';
 
 export const renderVenue = venue => {
+  for (let x in venue) {
+    if (venue[x] === undefined) {
+      venue[x] = 'No info';
+    }
+  }
   const markup = `
     <div class="venue">
       <h3>${venue.name}</h3>
@@ -8,9 +13,9 @@ export const renderVenue = venue => {
       <p>${venue.hours}</p>
       <p>Likes: Over ${venue.likes}</p>
       <p>Price:
-        <p>Category ${venue.price.tier}</p>
-        <p>Description ${venue.price.message}</p>
-        <p>Currency ${venue.price.currency}</p>
+        <p>Category ${venue.tier}</p>
+        <p>Description ${venue.message}</p>
+        <p>Currency ${venue.currency}</p>
       </p>
       <p>Rating on foursquare: ${venue.rating}</p>
       <p>${venue.address}, ${venue.city}</p>

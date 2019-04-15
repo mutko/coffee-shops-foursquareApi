@@ -33,10 +33,11 @@ const controlVenue = async () => {
     // render map
     buildMap(myLat, myLng, venue.coords);
 
+    // Privremeno ne prikazuj
     // Get tips
-    await venue.getTips();
+    // await venue.getTips();
     // Render Tips
-    venueView.renderTips(venue.tips);
+    // venueView.renderTips(venue.tips);
 
     // Get hours
     // DODATI KASNIJE recimo

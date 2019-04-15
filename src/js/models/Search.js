@@ -2,10 +2,10 @@ import axios from 'axios';
 import { clientId, clientSecret } from '../helpers/config';
 
 export default class Search {
-  constructor(radius = 1000, sortByDistance = 1, openNow = 1) {
+  constructor(radius = 1000, openNow = 1, sortByDistance = 1) {
     this.radius = radius;
-    this.sortByDistance = sortByDistance;
     this.openNow = openNow;
+    this.sortByDistance = sortByDistance;
     this.venues = {}; // this will be populated after getResults() is finished
   }
 

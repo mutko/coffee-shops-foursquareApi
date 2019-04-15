@@ -22,19 +22,32 @@
     <h1>Find Coffee Shops</h1>
 
     <form>
-      <input
-        type="number"
-        placeholder="Enter radius"
-        required
-        id="search-field"
-        class="search-field"
-      />
-      <label for="sort">Sort by distance</label>
-      <input type="checkbox" name="sort" id="sort-by-distance" />
-      <label for="open">Open now</label>
-      <input type="checkbox" name="open" checked id="open-now" />
-
-      <button type="submit" id="btn-search">Submit</button>
+      <fieldset>
+        <p>
+          <label for="sort">Radius for search in meters, min 100 max 100 000</label>
+          <input
+            type="number"
+            name="radius"
+            value="1000"
+            min="100"
+            max="100000"
+            id="radius"
+            class="radius"
+            required
+          />
+        </p>
+        <p>
+          <label for="open-mpw">Open now</label>
+          <input type="checkbox" name="open-now" id="open-now" checked />
+          <span>If not checked includes closed shops in search</span>
+        </p>
+        <p>
+          <label for="sort">Sort by distance</label>
+          <input type="checkbox" name="sort" id="sort-by-distance" checked />
+          <span>If not checked search list is sorted by relevance</span>
+        </p>
+        <button type="submit" id="btn-search">Submit</button>
+      </fieldset>
     </form>
 
     <section id="results" class="results">

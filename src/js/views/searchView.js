@@ -1,6 +1,6 @@
 import { elements } from './base';
 
-export const getInput = () => +elements.searchInput.value;
+export const getInput = () => +elements.searchRadius.value;
 
 export const getChecked = element => {
   if (element.checked) {
@@ -9,9 +9,9 @@ export const getChecked = element => {
   return 0;
 };
 
-export const clearInput = () => {
-  elements.searchInput.value = '';
-};
+// export const clearInput = () => {
+//  elements.searchRadius.value = '';
+// };
 
 export const clearResults = () => {
   elements.searchResultsList.innerHTML = '';

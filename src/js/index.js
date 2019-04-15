@@ -6,9 +6,9 @@ import { buildMap, getLocation } from './helpers/helpers';
 import '../sass/app.scss';
 
 // Search controller
-const controlSearch = async (radius, sort, open) => {
+const controlSearch = async (radius, open, sort) => {
   // new search object with coords
-  const search = new Search(radius, sort, open);
+  const search = new Search(radius, open, sort);
 
   // get position coords
   const position = await getLocation();
@@ -16,7 +16,7 @@ const controlSearch = async (radius, sort, open) => {
   search.lng = position.coords.longitude;
 
   // prepare UI
-  searchView.clearInput();
+  //searchView.clearInput();
   searchView.clearResults();
   renderLoader(elements.searchResults);
 
@@ -48,9 +48,7 @@ elements.searchForm.addEventListener('click', e => {
   const open = searchView.getChecked(elements.searchOpen);
 
   // radius required  maybe I should change this
-  if (radius) {
-    controlSearch(radius, sort, open);
-  }
+  controlSearch(radius, open, sort);
 });
 
 // get results and render them on load

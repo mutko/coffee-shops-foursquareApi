@@ -17,12 +17,19 @@
         height: 380px;
       }
     </style>
+
   </head>
   <body>
-    <h1>Find Coffee Shops</h1>
+    <header class="app-header">
+      <div class="app-header__title">
+        <h1>Caffeine Rush</h1>
+        <h2>Foursquare API App</h2>
+        <!-- <div class="app-header__search">
+          <i class="fas fa-search fa-lg"></i>
+        </div> -->
+      </div>
 
-    <form>
-      <fieldset>
+      <form class="app-header__form">
         <p>
           <label for="sort">Radius for search in meters, min 100 max 100 000</label>
           <input
@@ -47,21 +54,26 @@
           <span>If not checked search list is sorted by relevance</span>
         </p>
         <button type="submit" id="btn-search">Submit</button>
-      </fieldset>
-    </form>
-
+      </form>      
+    </header>
+       
     <section id="results" class="results">
       <ul id="results-list" class="results__list"></ul>
     </section>
 
-    <div id="mapid"></div>
+    <div id="mapid" class="map"></div>
 
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <footer class="app-footer">
+      <a href="https://github.com/mutko/coffee-shops-foursquareApi" target="_blank" title="Check app code on github">App</a>
+      <a href="https://github.com/mutko" target="_blank" title="Check all my work on github">All</a>
+      <img src="img/fs-grey.png" alt="Powered by Foursquare" width="300" class="footer__img">
+    </footer>
     <script
       src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
       integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
       crossorigin=""
     ></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

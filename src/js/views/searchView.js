@@ -18,9 +18,9 @@ export const clearResults = () => {
 };
 const renderVenue = shop => {
   const markup = `
-    <li class="venue">
-      <a href="venue-details.html?id=${shop.venue.id}" title="More info about this movie">
-          <h2>${shop.venue.name}</h2>
+    <li class="results__item">
+      <a href="venue.html?id=${shop.venue.id}" title="More info about this movie">
+          <h3>${shop.venue.name}</h3>
           <p>Udaljenost: ${shop.venue.location.distance}m</p>
           <p>Adresa: ${shop.venue.location.address}</p>
           <img src=${shop.venue.categories[0].icon.prefix}64${

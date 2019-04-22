@@ -1,8 +1,8 @@
-$color: #ccc;
-$font: Arial, Helvetica, sans-serif;
-body {
-  background: $color;
-  font-family: $font;
-  margin: 0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+@import './vars';
+@import './mixins';
+
+@import './common';
+@import './header';
+@import './banner';

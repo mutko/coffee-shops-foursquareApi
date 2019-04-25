@@ -44,7 +44,7 @@ elements.searchForm.addEventListener('click', e => {
   e.preventDefault();
 
   const radius = searchView.getInput();
-  const sort = searchView.getChecked(elements.searchSort);
+  const sort = +elements.searchSort.value;
   const open = searchView.getChecked(elements.searchOpen);
 
   // radius required  maybe I should change this

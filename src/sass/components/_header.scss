@@ -1,0 +1,16 @@
+.app-header {
+    min-height: 20%;
+    @media (min-height: 768px) {
+        min-height: 15%;
+      }
+    @include flexCenter();
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+.app-header__title {
+    text-align: center;
+}
+.app-header__main-title {
+    margin: 0 0 10px 0;
+}

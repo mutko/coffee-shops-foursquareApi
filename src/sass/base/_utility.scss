@@ -1,0 +1,40 @@
+.container {
+  padding: 0 15px; 
+  margin: 0 auto;
+  @media  #{$small} {
+    padding: 0;
+    width: 560px;
+  }
+  @media #{$medium} {
+    width: 860px;
+  }
+  @media #{$large} {
+    width: 1160px;
+  }
+
+}
+.btn {
+  display: inline-block;
+  background: #9d8460;
+  color: white;
+  border: 2px solid transparent;
+  padding: 15px 30px;
+  vertical-align: middle;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+  text-align: center;
+  touch-action: manipulation;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+      color: white;
+      background: #464546;
+      border-color: #464546;
+  }
+}
+.btn--outline {
+  background: transparent;
+  color: #9d8460;
+  border: 2px solid #9d8460;
+}

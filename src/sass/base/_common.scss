@@ -1,0 +1,40 @@
+:root {
+    box-sizing: border-box;
+    font-family: $mainFont;
+}
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+}
+
+html {
+    height: 100%;
+    transition: all .33s ease-out;
+}
+body {
+    height: 100%;
+    background: $bgPrime;
+    font-size: $mainFontSize;
+    color: $fontColor;
+    line-height: 1.45;
+}
+h1 {
+    font-size: $mainFontSize + 12;
+}
+h2 {
+    font-size: $mainFontSize + 8;
+}
+h3 {
+    font-size: $mainFontSize + 6;
+}
+h4 {
+    font-size: $mainFontSize + 4;
+}
+a { 
+    text-decoration: none;
+    color: $fontColor;
+}

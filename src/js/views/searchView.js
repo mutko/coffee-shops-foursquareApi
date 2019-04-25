@@ -17,15 +17,13 @@ export const clearResults = () => {
   elements.searchResultsList.innerHTML = '';
 };
 const renderVenue = shop => {
+  const address = (shop.venue.location.address) ? shop.venue.location.address : 'No address provided';
   const markup = `
     <li class="results__item">
       <a href="venue.html?id=${shop.venue.id}" title="More info about this movie">
           <h3>${shop.venue.name}</h3>
-          <p>Udaljenost: ${shop.venue.location.distance}m</p>
-          <p>Adresa: ${shop.venue.location.address}</p>
-          <img src=${shop.venue.categories[0].icon.prefix}64${
-    shop.venue.categories[0].icon.suffix
-  } alt="Venue icon" />
+          <span>${shop.venue.location.distance} m</span>
+          <p>${address}</p>
       </a>
     </li>
   `;

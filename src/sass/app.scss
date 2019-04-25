@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
-@import './vars';
-@import './mixins';
+@import './base/vars';
+@import './base/mixins';
 
-@import './common';
-@import './header';
-@import './banner';
+@import './base/common';
+@import './base/utility';
+
+@import './components/header';
+@import './components/intro';
+@import './components/footer';
+
+@import './components/results';
+@import './components/search';

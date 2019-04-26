@@ -15,12 +15,15 @@
   .map {
     @media #{$medium} {
       flex: 3;
-      padding-left: 20px;
     }
   }
 }
 .results__list {
   list-style: none;
+  padding: 0 15px;
+  @media #{$medium} {
+    padding: 0 20px 0 0;
+  }
 }
 .results__item {
   max-width: 500px;

@@ -21,15 +21,14 @@ export default class Venue {
       const result = await axios(`https://api.myjson.com/bins/1h2v10`);
       // eslint-disable-next-line prefer-destructuring
       const venue = result.data.response.venue;
+      console.log(venue);
       this.coords[0] = result.data.response;
       this.address = venue && venue.location && venue.location.address;
       this.city = venue && venue.location && venue.location.city;
-      this.color = venue && venue.ratingColor;
       this.hours = venue && venue.hours && venue.hours.status;
       this.likes = venue && venue.likes && venue.likes.count;
       this.name = venue && venue.name;
       this.phone = venue && venue.contact && venue.contact.formattedPhone;
-      this.currency = venue && venue.price && venue.price.currency;
       this.message = venue && venue.price && venue.price.message;
       this.tier = venue && venue.price && venue.price.tier;
       this.rating = venue && venue.rating;

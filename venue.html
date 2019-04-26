@@ -5,19 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Venue details</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
       crossorigin=""
     />
-
-    <style>
-      #mapid {
-        height: 380px;
-      }
-    </style>
   </head>
   <body>
     <header class="app-header">
@@ -28,15 +21,15 @@
         </div>
       </div>
     </header>
-    
-    <h1>Venue details</h1>
-
-    <section id="venue"></section>
-    <div id="venue-tips"></div>
-    <div id="venue-hours"></div>
-
+   
+    <main class="details">
+      <section id="venue">
+        <img src="https://via.placeholder.com/300" class="venue__bg-img"/>
+      </section>
+      <div id="venue-tips"></div>
+      <div id="venue-hours"></div>
+    </main>
     <div id="mapid" class="map"></div>
-
 
     <footer class="app-footer">
       <div class="container">

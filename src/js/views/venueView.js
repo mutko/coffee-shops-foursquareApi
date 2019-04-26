@@ -8,23 +8,35 @@ export const renderVenue = venue => {
   }
   const markup = `
     <div class="venue">
-      <h3>${venue.name}</h3>
-      <p>${venue.phone}</p>
-      <p>${venue.hours}</p>
-      <p>Likes: Over ${venue.likes}</p>
-      <p>Price:
-        <p>Category ${venue.tier}</p>
-        <p>Description ${venue.message}</p>
-        <p>Currency ${venue.currency}</p>
-      </p>
-      <p>Rating on foursquare: ${venue.rating}</p>
-      <p>${venue.address}, ${venue.city}</p>
+      <header class="venue__header">
+        <p>Coffee shop</p>
+        <h2>${venue.name}</h2>
+      </header>
+      <div class="venue__contact">
+        <p><i class="fas fa-map-marker-alt"></i> ${venue.address}, ${venue.city}</p>
+        <p><a href="tel:${venue.phone}"><i class="fas fa-phone-square"></i> ${venue.phone}</a></p>
+        <p><i class="fas fa-clock"></i> ${venue.hours}</p>
+      </div>
+      <div class="venue__hours">
+        
+      </div>
+      <div class="venue__price">
+        <p>Price:
+          <p>Category ${venue.tier}</p>
+          <p>Description ${venue.message}</p>
+          <p>Currency ${venue.currency}</p>
+        </p>
+      </div>
+      <div class="venue__fs">
+        <p>Rating on foursquare: ${venue.rating}</p>
+        <p>Likes: Over ${venue.likes}</p>
+      </div>
       <img src="${venue.image}" alt="Coffee Shop best photo" width="200" />
       <p>${venue.website}</p>
     </div>
   `;
 
-  elements.coffeeShop.insertAdjacentHTML('afterbegin', markup);
+  elements.coffeeShop.insertAdjacentHTML('beforeend', markup);
 };
 
 export const renderTips = venue => {

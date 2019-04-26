@@ -15,7 +15,7 @@
 }
 .btn {
   display: inline-block;
-  background: #9d8460;
+  background: $btnBg;
   color: white;
   border: 2px solid transparent;
   padding: 15px 30px;
@@ -29,12 +29,19 @@
   cursor: pointer;
   &:hover {
       color: white;
-      background: #464546;
-      border-color: #464546;
+      background: $btnHover;
+      border-color: $btnHover;
   }
 }
 .btn--outline {
   background: transparent;
-  color: #9d8460;
-  border: 2px solid #9d8460;
+  color: $btnBg;
+  border: 2px solid $btnBg;
+}
+.map {
+  height: 380px;
+}
+#mapid {
+  height: 100%;
+  width: 100%;
 }

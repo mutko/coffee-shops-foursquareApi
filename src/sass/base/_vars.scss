@@ -1,3 +1,4 @@
+$x-small: "all and (max-width: 320px)";
 $small: "all and (min-width: 600px)";
 $medium: "all and (min-width: 900px)";
 $large: "all and (min-width: 1200px)";
@@ -14,4 +15,5 @@ $btnBg: #9d8460;
 $btnHover: #464546;
 
 $bgPrime: #eae7de;
-// $bgAlt: #f2f2f2;
+$bgSec: #f2f2f2;
+$bgAlt: #e5e5e5;

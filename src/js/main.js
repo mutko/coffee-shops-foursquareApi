@@ -26,6 +26,7 @@ const controlSearch = async (radius, open, sort) => {
 
     // render results
     clearLoader();
+    
     searchView.renderResults(search.venues);
 
     // render map with new data

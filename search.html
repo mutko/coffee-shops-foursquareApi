@@ -12,12 +12,6 @@
       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
       crossorigin=""
     />
-    <style>
-      #mapid {
-        height: 380px;
-      }
-    </style>
-
   </head>
   <body>
     <header class="app-header">
@@ -61,13 +55,14 @@
       </div>
     </section>
 
-    <section id="results" class="results">
-      <div class="container">
-        <ul id="results-list" class="results__list"></ul>
+    <div class="wrapper">
+      <section id="results" class="results">
+          <ul id="results-list" class="results__list"></ul>
+      </section>
+      <div class="map">
+          <div id="mapid"></div>
       </div>
-    </section>
-
-    <div id="mapid" class="map"></div>
+    </div>
 
     <footer class="app-footer">
       <div class="container">

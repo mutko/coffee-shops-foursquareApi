@@ -3,7 +3,7 @@
   flex-direction: column;
   background: white;
   text-align: center;
-  padding: 40px 0;
+  padding-top: 40px;
   p {
     padding: 40px 0;
   }
@@ -22,20 +22,17 @@
 .app-footer__link {
   display: block;
   font-size: 20px;
-  color: #333333;
+  color: $fontColor;
   height: 50px;
   line-height: 50px;
   text-align: center;
   width: 50px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cccccc;
-  border-image: initial;
+  border: 1px solid $bgAlt;
   border-radius: 100%;
   &:hover {
     color: white;
-    background: #9d8460;
-    border-color: #9d8460;
+    background: $btnBg;
+    border-color: $btnBg;
   }
 }
 .app-footer__img {

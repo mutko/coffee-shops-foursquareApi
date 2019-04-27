@@ -1,6 +1,8 @@
 .wrapper {
+  text-align: center;
   @media #{$medium} {
     display: flex;
+    justify-content: center;
     width: 860px;
     margin: 0 auto;
   }
@@ -28,6 +30,7 @@
 .results__item {
   max-width: 500px;
   margin: 0 auto;
+  text-align: left;
 }
 .results__link {
   display: block;

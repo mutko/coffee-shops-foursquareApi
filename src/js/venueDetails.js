@@ -18,7 +18,7 @@ const controlVenue = async () => {
   const myLng = position.coords.longitude;
 
   // Prepare UI
-  renderLoader(elements.coffeeShop);
+  renderLoader(elements.map);
 
   try {
     // Get venue data

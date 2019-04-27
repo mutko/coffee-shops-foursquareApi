@@ -18,15 +18,15 @@ const controlSearch = async (radius, open, sort) => {
   // prepare UI
   //searchView.clearInput();
   searchView.clearResults();
-  renderLoader(elements.searchResults);
+  renderLoader(elements.wrapper);
 
   try {
     // search for venues
     await search.getResults();
 
-    // render results
+    // clear loader
     clearLoader();
-    
+    // render results
     searchView.renderResults(search.venues);
 
     // render map with new data

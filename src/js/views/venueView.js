@@ -28,6 +28,7 @@ export const renderVenue = venue => {
   }
 
   const markup = `
+    <div class="venue__bg"></div>
     <div class="venue">
       <header class="venue__header">
         <p class="venue__label">Coffee shop</p>

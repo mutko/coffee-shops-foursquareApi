@@ -20,7 +20,7 @@ export const buildMap = (lat, lng, results) => {
       ' <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
     osmLayer = new L.TileLayer(osmUrl, { maxZoom: 18, attribution: osmAttribution });
 
-  let map = new L.Map('map');
+  let map = new L.Map('map', null, { zoomControl:false });
   map.setView(new L.LatLng(lat, lng), 14);
   map.addLayer(osmLayer);
 

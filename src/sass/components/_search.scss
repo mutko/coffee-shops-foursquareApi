@@ -68,7 +68,7 @@
   }
 }
 .search__check:checked + .search__label {
-  background: $btnBg;
+  background: $titleColor;
   &::after {
     left: calc(100% - 5px);
     transform: translateX(-100%);

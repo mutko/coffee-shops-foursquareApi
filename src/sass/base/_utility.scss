@@ -17,7 +17,7 @@
 }
 .btn {
   display: inline-block;
-  background: $btnBg;
+  background: $titleColor;
   color: white;
   border: 2px solid transparent;
   padding: 15px 30px;
@@ -40,8 +40,8 @@
 }
 .btn--outline {
   background: transparent;
-  color: $btnBg;
-  border: 2px solid $btnBg;
+  color: $titleColor;
+  border: 2px solid $titleColor;
 }
 .map {
   height: 400px;

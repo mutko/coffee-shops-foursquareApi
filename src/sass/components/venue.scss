@@ -27,6 +27,7 @@
   background: white;
   h2 {
     font-size: 8vw;
+    color: $titleColor;
     @media #{$medium} {
       font-size: 5rem;
     }
@@ -52,7 +53,7 @@
     }
   }
   i {
-    color: $btnBg;
+    color: $titleColor;
     padding-right: 10px;
   }
 }
@@ -73,7 +74,7 @@
     }
   }
   i {
-    color: $btnBg;
+    color: $titleColor;
     padding-right: 0;
     &.light {
       color: #a9a9a9;

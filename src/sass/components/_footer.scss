@@ -1,11 +1,17 @@
 .app-footer {
-  @include flexCenter();
-  flex-direction: column;
   background: white;
   text-align: center;
-  padding-top: 40px;
+  padding: 40px 0;
+  @include flexCenter();
+  .container {
+    @include flexCenter();
+    flex-direction: column;
+  }
   p {
     padding: 40px 0;
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 }
 .app-footer__list {
@@ -36,9 +42,13 @@
   }
 }
 .app-footer__img {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: 250px;
 }
-.app-footer__msg {
-  max-width: 640px;
-  margin: 0 auto;
+.index .app-footer {
+  @media #{$vertical} {
+    min-height: 40%;
+    padding: 0;
+  }
 }

@@ -12,6 +12,9 @@
     width: 1160px;
   }
 }
+.container--small {
+  max-width: 640px;
+}
 .btn {
   display: inline-block;
   background: $btnBg;

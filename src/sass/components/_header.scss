@@ -1,8 +1,8 @@
 .app-header {
     min-height: 20%;
-    @media (min-height: 768px) {
-        min-height: 15%;
-      }
+    @media #{$vertical} {
+      min-height: 15%;
+    }
     @include flexCenter();
     overflow: hidden;
     position: relative;

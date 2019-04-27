@@ -21,6 +21,9 @@ body {
     font-size: $mainFontSize;
     color: $fontColor;
     line-height: 1.45;
+    @media  #{$x-small} {
+        font-size: .8rem;
+    } 
 }
 h1 {
     font-size: $mainFontSize + 12;

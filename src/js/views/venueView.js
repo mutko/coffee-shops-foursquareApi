@@ -44,6 +44,10 @@ export const renderVenue = venue => {
           <p class="venue__label">Price:</p>
           <p>${price}</p>
         </div>
+        <div class="venue__features">
+          <p class="venue__label">Features:</p>
+          <p><i class="fas fa-wifi" title="Wi-Fi"></i> <i class="fas fa-credit-card" title="Credit card payment"></i></p>
+        </div>
         <div class="venue__rating">
           <p class="venue__label">Rating:</p>
           <p>${venue.rating} / 10</p>
@@ -51,10 +55,6 @@ export const renderVenue = venue => {
         <div class="venue__likes">
           <p class="venue__label">Likes:</p>
           <p>${venue.likes}</p>
-        </div>
-        <div class="venue__features">
-          <p class="venue__label">Features:</p>
-          <p><i class="fas fa-wifi" title="Wi-Fi"></i> <i class="fas fa-credit-card" title="Credit card payment"></i></p>
         </div>
       </div>
       <img src="${venue.image}" alt="Coffee Shop best photo" width="200" class="venue__img" />     

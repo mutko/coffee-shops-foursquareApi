@@ -10,10 +10,9 @@
   top: -100px;
 }
 .venue__bg {
-  height: 400px;
+  height: 500px;
   background: url('https://via.placeholder.com/100') no-repeat center;
   background-size: cover;
-  background-attachment: fixed;
   @media #{$x-small} {
     height: 200px;
   }

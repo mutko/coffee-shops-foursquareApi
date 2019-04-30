@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coffee shop details</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <div class="app-header__title">
+          <h1>Caffeine Rush</h1>
+          <h2>Foursquare API App</h2>
+        </div>
+      </div>
+    </header>
+   
+    <main class="details">
+      <section id="venue">
+        
+      </section>
+      <!-- <div id="venue-tips"></div> -->
+    </main>
+    <div class="map">
+        <div id="mapid"></div>
+    </div>
+
+    <footer class="app-footer">
+      <div class="container container--small">
+        <ul class="app-footer__list">
+          <li class="app-footer__item">
+            <a href="https://github.com/mutko" target="_blank" title="Check my work on github" class="app-footer__link"><i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li class="app-footer__item">
+            <a href="https://www.linkedin.com/in/brankobozovic/"  target="_blank" title="Get social on Linkedin" class="app-footer__link"><i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="app-footer__item">
+            <a href="https://www.facebook.com/branko.bozovic.35"  target="_blank" title="Get social on Facebook" class="app-footer__link"><i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+        </ul>
+        <p>You can check my other work on github and if you wanna get in touch, talk to me about this app or just say hi, send me direct message or contact me through social sites listed above.</p>
+        <a href="mailto:bmutko@gmail.com" target="_self" class="btn btn--outline">bmutko@gmail.com <i class="fas fa-paper-plane"></i> </a>
+        <p>
+          <img src="img/fs-grey.png" alt="Powered by Foursquare" width="100" class="app-footer__img">
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""
+    ></script>
+
+    <script src="js/venue.js"></script>
+  </body>
+</html>

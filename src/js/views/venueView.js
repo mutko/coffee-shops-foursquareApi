@@ -29,7 +29,7 @@ export const renderVenue = venue => {
 
   const markup = `
     <div class="venue__bg"></div>
-    <div class="venue">
+    <div class="container container--small venue">
       <header class="venue__header">
         <p class="venue__label">Coffee shop</p>
         <h2>${venue.name}</h2>

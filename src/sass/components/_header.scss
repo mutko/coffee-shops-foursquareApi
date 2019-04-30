@@ -7,10 +7,24 @@
     overflow: hidden;
     position: relative;
     background: white;
+    @media  #{$medium} {
+
+    } 
 }
 .app-header__title {
-    text-align: center;
-}
-.app-header__main-title {
+  text-align: center;
+  letter-spacing: 3px;
+
+  h1 {
+    text-transform: uppercase;
     margin: 0 0 10px 0;
+    @media #{$x-small} {
+      font-size: 1.2rem;
+    }
+  }
+  h2 {
+    @media #{$x-small} {
+      font-size: 1rem;
+    }
+  }
 }

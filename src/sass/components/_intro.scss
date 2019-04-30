@@ -1,24 +1,49 @@
 .intro {
-  padding: 30px 0;
   min-height: 80%;
   font-size: 1.2rem;
-  @media  #{$x-small} {
+  @media #{$vertical} {
+    min-height: 48%;
+  }
+  @media #{$x-small} {
     font-size: 1.1rem;
   } 
-  @media  #{$small} {
+  @media #{$small} {
     font-size: 1.2rem;
   } 
-  @media  #{$medium} {
-    font-size: 1.4rem;
+  @media #{$medium} {
+    font-size: calc(1.2rem + 1.2vh);
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    color: white;
+    display: block;
+    width: 100%;
+    height: 85%;
+    position: absolute;
+    top: 15%;
+    left: 0px;
+    visibility: inherit;
+    backface-visibility: hidden;
+    opacity: 1;
+    .container {
+      @include transformCenter();
+      p:first-child {
+        text-transform: uppercase;
+        font-weight: $bold;
+      }
+    }
   } 
-  @media #{$vertical} {
-    min-height: 45%;
-  }
+
   @include flexCenter();
   flex-direction: column;
   text-align: center;
 }
-
+.full-cover {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -26,7 +51,11 @@
 }
 .intro__img {
     margin: 30px 0;
-    animation: pulse 3s infinite linear;
+    animation: pulse 2.5s infinite linear;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    @media #{$medium} {
+      margin: 5% 0;
+    }
     &:hover {
       animation-play-state: paused;
     }

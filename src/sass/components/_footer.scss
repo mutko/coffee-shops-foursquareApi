@@ -8,7 +8,7 @@
     flex-direction: column;
   }
   p {
-    padding: 40px 0;
+    padding: 30px 0;
     &:last-child {
       padding-bottom: 0;
     }
@@ -51,4 +51,7 @@
     min-height: 40%;
     padding: 0;
   }
+  @media #{$medium} {
+    display: none;
+  } 
 }

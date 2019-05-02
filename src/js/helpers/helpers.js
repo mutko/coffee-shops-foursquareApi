@@ -21,10 +21,14 @@ export const buildMap = (lat, lng, results) => {
     osmLayer = new L.TileLayer(osmUrl, { maxZoom: 18, attribution: osmAttribution });
 
   let map = new L.Map('map');
+  let myIcon = L.icon({
+    iconUrl: '../img/me.png',
+    iconSize: [60, 60]
+  });
   map.setView(new L.LatLng(lat, lng), 14);
   map.addLayer(osmLayer);
   map.scrollWheelZoom.disable();
-  let marker = L.marker([lat, lng]).addTo(map);
+  let marker = L.marker([lat, lng], { icon: myIcon }).addTo(map);
   for (let i = 0; i < results.length; i += 1) {
     marker = new L.marker([results[i].venue.location.lat, results[i].venue.location.lng]).addTo(
       map

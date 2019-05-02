@@ -16,7 +16,7 @@ const controlSearch = async (radius, open, sort) => {
   search.lng = position.coords.longitude;
 
   // prepare UI
-  //searchView.clearInput();
+  // searchView.clearInput();
   searchView.clearResults();
   renderLoader(elements.wrapper);
 

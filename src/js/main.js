@@ -40,7 +40,7 @@ const controlSearch = async (radius, open, sort) => {
     clearLoader();
   }
 };
-elements.searchForm.addEventListener('click', e => {
+elements.searchForm.addEventListener('click', async e => {
   elements.searchForm.disabled = true;
 
   e.preventDefault();
@@ -50,11 +50,9 @@ elements.searchForm.addEventListener('click', e => {
   const open = searchView.getChecked(elements.searchOpen);
 
   // radius required  maybe I should change this
-  controlSearch(radius, open, sort);
+  await controlSearch(radius, open, sort);
 
-  setTimeout(() => {
-    elements.searchForm.disabled = false;
-  }, 1000);
+  elements.searchForm.disabled = false;
 });
 
 // get results and render them on load

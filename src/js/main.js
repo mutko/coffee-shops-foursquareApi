@@ -24,7 +24,6 @@ const controlSearch = async (radius, open, sort) => {
     // search for venues
     await search.getResults();
 
-    // clear loader
     clearLoader();
     // render results
     searchView.renderResults(search.venues);
@@ -42,6 +41,8 @@ const controlSearch = async (radius, open, sort) => {
   }
 };
 elements.searchForm.addEventListener('click', e => {
+  elements.searchForm.disabled = true;
+
   e.preventDefault();
 
   const radius = searchView.getInput();
@@ -50,6 +51,10 @@ elements.searchForm.addEventListener('click', e => {
 
   // radius required  maybe I should change this
   controlSearch(radius, open, sort);
+
+  setTimeout(() => {
+    elements.searchForm.disabled = false;
+  }, 1000);
 });
 
 // get results and render them on load

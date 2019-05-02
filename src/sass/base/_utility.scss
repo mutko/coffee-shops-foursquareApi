@@ -1,7 +1,7 @@
 .container {
-  padding: 0 15px; 
+  padding: 0 15px;
   margin: 0 auto;
-  @media  #{$small} {
+  @media #{$small} {
     padding: 0;
     width: 560px;
   }
@@ -29,13 +29,13 @@
   white-space: nowrap;
   user-select: none;
   cursor: pointer;
-  @media  #{$x-small} {
+  @media #{$x-small} {
     padding: 7px;
   }
   &:hover {
-      color: white;
-      background: $btnHover;
-      border-color: $btnHover;
+    color: white;
+    background: $btnHover;
+    border-color: $btnHover;
   }
 }
 .btn--outline {
@@ -45,6 +45,10 @@
 }
 .map {
   height: 400px;
+  padding: 0 30px;
+  @media #{$small} {
+    padding: 0;
+  }
 }
 #mapid {
   height: 100%;

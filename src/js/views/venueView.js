@@ -1,7 +1,6 @@
 import { elements } from './base';
 
 export const renderVenue = venue => {
-
   let price;
   if (venue.tier) {
     switch (venue.tier) {
@@ -14,18 +13,22 @@ export const renderVenue = venue => {
       case 4:
         price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign"></i>`;
         break;
-      default: 
+      default:
         price = `<i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign light"></i><i class="fas fa-dollar-sign light"></i><i class="fas fa-dollar-sign light"></i>`;
     }
   } else {
-    price = 'No data';
+    price = 'No price info';
   }
 
-  for (let x in venue) {
-    if (venue[x] === undefined) {
-      venue[x] = 'No data';
-    }
-  }
+  // for (let x in venue) {
+  //   if (venue[x] === undefined) {
+  //     delete venue[x]; // = 'No data';
+  //     // venue.website = 'No website';
+  //     // venue.likes = 'Not liked before';
+  //   }
+  // }
+
+  // ${venue.address === undefined && venue.phone  === undefined && venue.hours  === undefined ? `<p>There is no contact information provided</p>` : ''}
 
   const markup = `
     <div class="venue__bg"></div>
@@ -33,12 +36,34 @@ export const renderVenue = venue => {
       <header class="venue__header">
         <p class="venue__label">Coffee shop</p>
         <h2>${venue.name}</h2>
-        <p><a href="${venue.website}" target="_blank">${venue.website}</a></p>
+
+        ${
+          venue.website
+            ? `<p><a href="${venue.website}" target="_blank" title="Visit website in new tab">${
+                venue.website
+              }</a></p>`
+            : ''
+        }
+
       </header>
       <div class="venue__contact">
-        <p><i class="fas fa-map-marker-alt"></i> ${venue.address}, ${venue.city}</p>
-        <p><a href="tel:${venue.phone}"><i class="fas fa-phone-square"></i> ${venue.phone}</a></p>
-        <p><i class="fas fa-clock"></i> ${venue.hours}</p>
+
+        ${
+          venue.address
+            ? `<p><i class="fas fa-map-marker-alt"></i> ${venue.address}, ${venue.city}</p>`
+            : ''
+        }
+       
+        ${
+          venue.phone
+            ? `<p><a href="tel:${
+                venue.phone
+              }" title="Call number"><i class="fas fa-phone-square"></i> ${venue.phone}</a></p>`
+            : ''
+        }
+        
+        ${venue.hours ? `<p><i class="fas fa-clock"></i> ${venue.hours}</p>` : ''}
+
       </div>
       <div class="venue__contact venue__info">
         <div class="venue__price">
@@ -51,11 +76,14 @@ export const renderVenue = venue => {
         </div>
         <div class="venue__rating">
           <p class="venue__label">Rating:</p>
-          <p>${venue.rating} / 10</p>
+
+          ${venue.rating ? `<p>${venue.rating} / 10</p>` : `<p>Not rated</p>`}
+          
         </div>
         <div class="venue__likes">
           <p class="venue__label">Likes:</p>
-          <p>${venue.likes}</p>
+          ${venue.likes ? `<p>${venue.likes}</p>` : `<p>Not liked</p>`}
+          
         </div>
       </div>
       <img src="${venue.image}" alt="Coffee Shop best photo" width="200" class="venue__img" />     

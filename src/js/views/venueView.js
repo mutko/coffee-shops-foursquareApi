@@ -133,7 +133,14 @@ export const renderVenue = venue => {
           
         </div>
       </div>
-      <img src="${venue.image}" alt="Coffee Shop best photo" width="200" class="venue__img" />     
+      ${
+        venue.image
+          ? `<img src="${
+              venue.image
+            }" alt="Coffee Shop best photo" width="200" class="venue__img" />`
+          : `<p><i class="fas fa-image fa-lg"></i> There is no photo for this place</p>`
+      }
+           
     </div>
   `;
 

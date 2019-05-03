@@ -97,7 +97,7 @@ export const renderVenue = venue => {
             }
             
             ${
-              venue.features.payments && venue.features.payments === 'Yes'
+              venue.features.payments && venue.features.payments.slice(0, 3) === 'Yes'
                 ? `<i class="fas fa-credit-card" title="Credit card payments"></i>`
                 : `<i class="fas fa-credit-card light" title="No credit card payment"></i>`
             }
@@ -147,15 +147,24 @@ export const renderVenue = venue => {
   elements.coffeeShop.insertAdjacentHTML('beforeend', markup);
 };
 
-// export const renderTips = venue => {
-//   const markup = `
-//     <div class="tips">
-//       <h4>${venue.user}</h4>
-//       <img src="${venue.userPhoto}" alt="User profile photo" width="200" />
-//       <p>${venue.text}</p>
-//       <img src="${venue.image}" alt="Coffee shop image made by user"  width="300" />
-
-//     </div>
-//   `;
-//   elements.shopTips.insertAdjacentHTML('afterbegin', markup);
-// };
+export const renderTips = venue => {
+  const markup = `
+    <div class="container container--small">
+      <div class="tips">
+        <img src="${venue.tips.userPhotoPrefix}120x120${
+    venue.tips.userPhotoSuffix
+  }" alt="User profile photo" width="120" class="tips__img" />
+        <div class="tips__body">
+          <p class="tips__user">${venue.tips.firstName} ${venue.tips.lastName}</p>
+          <p class="tips__text">${venue.tips.text}</p>
+          <p class="tips__likes"><span class="tips__agree"><i class="fas fa-thumbs-up"></i> ${
+            venue.tips.agree
+          }</span> <span class="tips__disagree"><i class="fas fa-thumbs-down"></i> ${
+    venue.tips.disagree
+  }</span></p>
+        </div>
+      </div>
+    </div>
+  `;
+  elements.shopTips.insertAdjacentHTML('afterbegin', markup);
+};

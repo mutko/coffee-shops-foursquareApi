@@ -18,11 +18,7 @@ export default class Venue {
 
   async getVenue() {
     try {
-      const result = await axios(
-        `https://api.foursquare.com/v2/venues/${
-          this.id
-        }?&v=20190323&client_id=${clientId}&client_secret=${clientSecret}`
-      );
+      const result = await axios('https://api.myjson.com/bins/1h2v10');
       // eslint-disable-next-line prefer-destructuring
       const venue = result.data.response.venue;
       console.log(venue);
@@ -38,6 +34,54 @@ export default class Venue {
       this.tier = venue && venue.price && venue.price.tier;
       this.rating = venue && venue.rating;
       this.website = venue && venue.url;
+      this.tips.text =
+        venue &&
+        venue.tips &&
+        venue.tips.groups[0] &&
+        venue.tips.groups[0].items[0] &&
+        venue.tips.groups[0].items[0].text;
+      this.tips.firstName =
+        venue &&
+        venue.tips &&
+        venue.tips.groups[0] &&
+        venue.tips.groups[0].items[0] &&
+        venue.tips.groups[0].items[0].user &&
+        venue.tips.groups[0].items[0].user.firstName;
+      this.tips.lastName =
+        venue &&
+        venue.tips &&
+        venue.tips.groups[0] &&
+        venue.tips.groups[0].items[0] &&
+        venue.tips.groups[0].items[0].user &&
+        venue.tips.groups[0].items[0].user.lastName;
+      this.tips.userPhotoPrefix =
+        venue &&
+        venue.tips &&
+        venue.tips.groups[0] &&
+        venue.tips.groups[0].items[0] &&
+        venue.tips.groups[0].items[0].user &&
+        venue.tips.groups[0].items[0].user.photo &&
+        venue.tips.groups[0].items[0].user.photo.prefix;
+      this.tips.userPhotoSuffix =
+        venue &&
+        venue.tips &&
+        venue.tips.groups[0] &&
+        venue.tips.groups[0].items[0] &&
+        venue.tips.groups[0].items[0].user &&
+        venue.tips.groups[0].items[0].user.photo &&
+        venue.tips.groups[0].items[0].user.photo.suffix;
+      this.tips.agree =
+        venue &&
+        venue.tips &&
+        venue.tips.groups[0] &&
+        venue.tips.groups[0].items[0] &&
+        venue.tips.groups[0].items[0].agreeCount;
+      this.tips.disagree =
+        venue &&
+        venue.tips &&
+        venue.tips.groups[0] &&
+        venue.tips.groups[0].items[0] &&
+        venue.tips.groups[0].items[0].disagreeCount;
       this.image =
         venue &&
         venue.bestPhoto &&
@@ -55,18 +99,18 @@ export default class Venue {
     }
   }
 
-  async getTips() {
-    try {
-      const result = await axios('https://api.myjson.com/bins/92xf8');
-      const tips = result.data.response.tips.items[0];
-      this.tips.text = tips.text;
-      this.tips.image = tips.photourl;
-      this.tips.agree = tips.agreeCount;
-      this.tips.disagree = tips.disagreeCount;
-      this.tips.user = `${tips.user.firstName} ${tips.user.lastName}`;
-      this.tips.userPhoto = `${tips.user.photo.prefix}240${tips.user.photo.suffix}`;
-    } catch (error) {
-      alert('Error in getting coffee shop TIPS');
-    }
-  }
+  // async getTips() {
+  //   try {
+  //     const result = await axios('https://api.myjson.com/bins/92xf8');
+  //     const tips = result.data.response.tips.items[0];
+  //     this.tips.text = tips.text;
+  //     this.tips.image = tips.photourl;
+  //     this.tips.agree = tips.agreeCount;
+  //     this.tips.disagree = tips.disagreeCount;
+  //     this.tips.user = `${tips.user.firstName} ${tips.user.lastName}`;
+  //     this.tips.userPhoto = `${tips.user.photo.prefix}240${tips.user.photo.suffix}`;
+  //   } catch (error) {
+  //     alert('Error in getting coffee shop TIPS');
+  //   }
+  // }
 }

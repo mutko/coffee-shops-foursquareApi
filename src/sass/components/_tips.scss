@@ -1,7 +1,7 @@
 .venue-tips {
-  position: relative;
-  top: -50px;
   font-size: 1.4rem;
+  padding: 80px 0 60px;
+  background: $bgSec;
   @media #{$x-small} {
     font-size: 1rem;
   }

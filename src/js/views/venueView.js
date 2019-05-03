@@ -166,5 +166,5 @@ export const renderTips = venue => {
       </div>
     </div>
   `;
-  elements.shopTips.insertAdjacentHTML('afterbegin', markup);
+  elements.shopTips.insertAdjacentHTML('beforeend', markup);
 };

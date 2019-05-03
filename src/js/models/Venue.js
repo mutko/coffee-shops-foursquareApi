@@ -11,7 +11,7 @@ export default class Venue {
   }
 
   // PRIVREMENO DA NE BIH SLAO PREMIUM REQUEST
-  // https://api.myjson.com/bins/1h2v10
+  // 'https://api.myjson.com/bins/1h2v10'
 
   // PRAVI URL
   // `https://api.foursquare.com/v2/venues/${this.id}?&v=20190323&client_id=${clientId}&client_secret=${clientSecret}`

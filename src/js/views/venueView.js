@@ -20,6 +20,19 @@ export const renderVenue = venue => {
     price = 'No price info';
   }
 
+  venue.features = {};
+  venue.attributes.groups.forEach(el => {
+    if (el.type === 'wifi') {
+      venue.features.wifi = el.items[0].displayValue;
+    } else if (el.type === 'payments') {
+      venue.features.payments = el.items[0].displayValue;
+    } else if (el.type === 'reservations') {
+      venue.features.reservations = el.items[0].displayValue;
+    } else if (el.type === 'outdoorSeating') {
+      venue.features.out = el.items[0].displayValue;
+    }
+  });
+
   // for (let x in venue) {
   //   if (venue[x] === undefined) {
   //     delete venue[x]; // = 'No data';
@@ -72,7 +85,35 @@ export const renderVenue = venue => {
         </div>
         <div class="venue__features">
           <p class="venue__label">Features:</p>
-          <p><i class="fas fa-wifi" title="Wi-Fi"></i> <i class="fas fa-credit-card" title="Credit card payment"></i></p>
+
+          <p>
+
+            ${
+              venue.features.wifi && venue.features.wifi === 'Yes'
+                ? `<i class="fas fa-wifi" title="Free Wi-Fi"></i>`
+                : `<i class="fas fa-wifi light" title="No Wi-Fi"></i>`
+            }
+            
+            ${
+              venue.features.payments && venue.features.payments.slice(0, 3) === 'Yes'
+                ? `<i class="fas fa-credit-card" title="Credit card payments"></i>`
+                : `<i class="fas fa-credit-card light" title="No credit card payment"></i>`
+            }
+
+            ${
+              venue.features.reservations && venue.features.reservations === 'Yes'
+                ? `<i class="fas fa-book-open" title="Reservations possible"></i>`
+                : `<i class="fas fa-book-open light" title="No reservations"></i>`
+            }
+
+            ${
+              venue.features.out && venue.features.out === 'Yes'
+                ? `<i class="fas fa-umbrella-beach" title="Outdoor seating"></i>`
+                : `<i class="fas fa-umbrella-beach light" title="No outdoor seating"></i>`
+            }
+
+          </p>
+
         </div>
         <div class="venue__rating">
           <p class="venue__label">Rating:</p>

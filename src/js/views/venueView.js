@@ -23,13 +23,15 @@ export const renderVenue = venue => {
   venue.features = {};
   venue.attributes.groups.forEach(el => {
     if (el.type === 'wifi') {
-      venue.features.wifi = el.items[0].displayValue;
+      venue.features.wifi = 'Yes';
     } else if (el.type === 'payments') {
       venue.features.payments = el.items[0].displayValue;
     } else if (el.type === 'reservations') {
       venue.features.reservations = el.items[0].displayValue;
     } else if (el.type === 'outdoorSeating') {
       venue.features.out = el.items[0].displayValue;
+    } else if (el.type === 'smoking') {
+      venue.features.smoking = 'Yes';
     }
   });
 
@@ -89,27 +91,31 @@ export const renderVenue = venue => {
           <p>
 
             ${
-              venue.features.wifi && venue.features.wifi === 'Yes'
+              venue.features.wifi
                 ? `<i class="fas fa-wifi" title="Free Wi-Fi"></i>`
                 : `<i class="fas fa-wifi light" title="No Wi-Fi"></i>`
             }
             
             ${
-              venue.features.payments && venue.features.payments.slice(0, 3) === 'Yes'
+              venue.features.payments && venue.features.payments === 'Yes'
                 ? `<i class="fas fa-credit-card" title="Credit card payments"></i>`
                 : `<i class="fas fa-credit-card light" title="No credit card payment"></i>`
             }
 
             ${
-              venue.features.reservations && venue.features.reservations === 'Yes'
+              venue.features.reservations
                 ? `<i class="fas fa-book-open" title="Reservations possible"></i>`
-                : `<i class="fas fa-book-open light" title="No reservations"></i>`
+                : ''
             }
 
             ${
-              venue.features.out && venue.features.out === 'Yes'
+              venue.features.out
                 ? `<i class="fas fa-umbrella-beach" title="Outdoor seating"></i>`
-                : `<i class="fas fa-umbrella-beach light" title="No outdoor seating"></i>`
+                : ''
+            }
+
+            ${
+              venue.features.smoking ? `<i class="fas fa-smoking" title="Smoking allowed"></i>` : ''
             }
 
           </p>

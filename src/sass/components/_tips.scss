@@ -6,9 +6,9 @@
     font-size: 1rem;
   }
   h3 {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     border-bottom: 2px solid $titleColor;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     font-weight: 900;
   }
@@ -23,7 +23,9 @@
   width: 120px;
   height: 120px;
   margin-right: 20px;
+  flex: 0 0 120px;
   @media #{$x-small} {
+    flex: 0 0 64px;
     width: 64px;
     height: 64px;
     margin-right: 10px;
@@ -31,6 +33,7 @@
 }
 .tips__user {
   font-weight: $bold;
+  color: $titleColor;
 }
 .tips__text {
   padding: 20px 0;

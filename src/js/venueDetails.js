@@ -35,11 +35,6 @@ const controlVenue = async () => {
 
     // Render Tips
     venueView.renderTips(venue);
-
-    // Get hours
-    // DODATI KASNIJE recimo
-    // venue.getHours()
-    // Render Hours MAYBE?
   } catch (error) {
     alert('Error getting venue details');
   }

@@ -1,20 +1,19 @@
 .app-header {
-    min-height: 20%;
-    @media #{$vertical} {
-      min-height: 15%;
-    }
-    @include flexCenter();
-    overflow: hidden;
-    position: relative;
-    background: white;
-    @media  #{$medium} {
-
-    } 
+  min-height: 20%;
+  @media #{$vertical} {
+    min-height: 15%;
+  }
+  @include flexCenter();
+  overflow: hidden;
+  position: relative;
+  background: white;
+  @media #{$medium} {
+  }
 }
 .app-header__title {
   text-align: center;
   letter-spacing: 3px;
-
+  @include flexCenter();
   h1 {
     text-transform: uppercase;
     margin: 0 0 10px 0;

@@ -30,6 +30,7 @@ export const clearLoader = () => {
 
 export const renderError = (
   text = 'Please check internet connection or again try later.',
+  humor = 'And hurry up, coffee is getting cold!',
   parent = elements.errorWrapper
 ) => {
   const displayError = `
@@ -37,10 +38,9 @@ export const renderError = (
       <div class="container container--small">
         <p>Oops! Error!</p>
         <p>${text}</p>
-        <p>And hurry up, coffee is getting cold!</p>
+        <p>${humor}</p>
       </div>
     </div>
   `;
-  // parent.insertAdjacentHTML('beforebegin', displayError);
   parent.innerHTML = displayError;
 };

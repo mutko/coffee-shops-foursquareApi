@@ -15,6 +15,12 @@
 .container--small {
   max-width: 760px;
 }
+#error-wrapper {
+  text-align: center;
+  .btn {
+    margin-bottom: 40px;
+  }
+}
 .error {
   text-align: center;
   @include flexCenter();

@@ -99,8 +99,6 @@ export default class Venue {
         }`;
       // render map with new data
       // buildMap(lat, lng);
-    } catch (error) {
-      alert('Error in getting coffee shop DETAILS');
-    }
+    } catch (error) {}
   }
 }

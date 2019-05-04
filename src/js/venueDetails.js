@@ -1,6 +1,6 @@
 import Venue from './models/Venue';
 import * as venueView from './views/venueView';
-import { elements, renderLoader, clearLoader } from './views/base';
+import { elements, renderLoader, clearLoader, renderError } from './views/base';
 import { renderMap, getLocation } from './helpers/helpers';
 
 import '../sass/app.scss';
@@ -9,7 +9,6 @@ import '../sass/app.scss';
 const controlVenue = async () => {
   const id = window.location.search.substring(4);
 
-  // Create new venue
   const venue = new Venue(id);
 
   // get position coords
@@ -23,20 +22,19 @@ const controlVenue = async () => {
   try {
     // Get venue data
     await venue.getVenue();
-    console.log(venue);
-    // Prepare UI
     clearLoader();
-
-    // Render Venue
     venueView.renderVenue(venue);
-
-    // render map
     renderMap(myLat, myLng, venue.coords);
-
-    // Render Tips
     venueView.renderTips(venue);
   } catch (error) {
-    alert('Error getting venue details');
+    const message =
+      'Sorry! We probably exceeded details quota for today. To see details of this place try again tomorrow!';
+    const humor = 'Hot coffee will wait here for you!';
+    renderError(message, humor);
+    elements.errorWrapper.insertAdjacentHTML(
+      'beforeend',
+      `<a href="search.html" title="Back on search page" class="btn">Back on search</a>`
+    );
   }
 };
 

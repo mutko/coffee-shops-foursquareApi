@@ -36,7 +36,11 @@ const controlSearch = async (radius, open, sort) => {
     console.log(search);
   } catch (error) {
     clearLoader();
+
     // geolocation error is rendered from helpers.js
+    renderError();
+
+    // render api errors
     console.log(error);
   }
 };

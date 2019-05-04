@@ -28,7 +28,10 @@ export const clearLoader = () => {
   if (loader) loader.parentElement.removeChild(loader);
 };
 
-export const renderError = (text, parent) => {
+export const renderError = (
+  text = 'Please check internet connection or again try later.',
+  parent = elements.errorWrapper
+) => {
   const displayError = `
     <div class="error">
       <div class="container container--small">

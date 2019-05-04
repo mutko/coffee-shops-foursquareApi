@@ -98,7 +98,7 @@ export const renderVenue = venue => {
             ${
               venue.features.payments && venue.features.payments.slice(0, 3) === 'Yes'
                 ? `<i class="fas fa-credit-card" title="Credit card payments"></i>`
-                : `<i class="fas fa-credit-card light" title="No credit card payment"></i>`
+                : ''
             }
 
             ${

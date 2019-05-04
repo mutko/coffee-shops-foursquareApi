@@ -20,51 +20,59 @@
   </head>
   <body>
     <header class="app-header">
-      <div class="app-header__title">
-        <h1>Caffeine Rush</h1>
-        <h2>Foursquare API App</h2>
+      <div class="container">
+        <div class="app-header__title">
+          <img src="img/logo.jpg" alt="App logo" width="100" />
+          <div class="app-header__text">
+            <h1>Caffeine Rush</h1>
+            <h2>Foursquare API App</h2>
+          </div>
+        </div>
       </div>
     </header>
-    <section class="search">
-      <div class="container">
-        <form class="search__form">
-          <div>
-            <label for="sort">Radius (m)</label>
-            <input
-              type="number"
-              name="radius"
-              value="1000"
-              min="100"
-              max="100000"
-              id="radius"
-              class="search__input"
-              required
-            />
-          </div>
 
-          <div>
-            <label for="sort">Sort by</label>
-            <select name="sort" id="sort-by-distance" class="search__input">
-              <option value="0">Relevance</option>
-              <option value="1" selected>Distance</option>
-            </select>
-          </div>
-          <div>
-            <span>Open now</span>
-            <input type="checkbox" name="open-now" id="open-now" class="search__check" checked />
-            <label for="open-now" class="search__label">Open now</label>
-          </div>
-          <button id="btn-search" class="btn">Search <i class="fas fa-chevron-right"></i></button>
-        </form>
-      </div>
-    </section>
+    <div id="error-wrapper">
+      <section class="search">
+        <div class="container">
+          <form class="search__form">
+            <div>
+              <label for="sort">Radius (m)</label>
+              <input
+                type="number"
+                name="radius"
+                value="1000"
+                min="100"
+                max="100000"
+                id="radius"
+                class="search__input"
+                required
+              />
+            </div>
 
-    <div id="wrapper" class="wrapper">
-      <section id="results" class="results">
-        <ul id="results-list" class="results__list"></ul>
+            <div>
+              <label for="sort">Sort by</label>
+              <select name="sort" id="sort-by-distance" class="search__input">
+                <option value="0">Relevance</option>
+                <option value="1" selected>Distance</option>
+              </select>
+            </div>
+            <div>
+              <span>Open now</span>
+              <input type="checkbox" name="open-now" id="open-now" class="search__check" checked />
+              <label for="open-now" class="search__label">Open now</label>
+            </div>
+            <button id="btn-search" class="btn">Search <i class="fas fa-chevron-right"></i></button>
+          </form>
+        </div>
       </section>
-      <div class="map">
-        <div id="mapid"></div>
+
+      <div id="wrapper" class="wrapper">
+        <section id="results" class="results">
+          <ul id="results-list" class="results__list"></ul>
+        </section>
+        <div class="map">
+          <div id="mapid"></div>
+        </div>
       </div>
     </div>
 

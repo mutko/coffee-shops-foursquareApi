@@ -6,6 +6,7 @@ export const elements = {
   searchSort: id('sort-by-distance'),
   searchOpen: id('open-now'),
   wrapper: id('wrapper'),
+  errorWrapper: id('error-wrapper'),
   searchResults: id('results'),
   searchResultsList: id('results-list'),
   coffeeShop: id('venue'),
@@ -25,4 +26,18 @@ export const renderLoader = parent => {
 export const clearLoader = () => {
   const loader = id('loader');
   if (loader) loader.parentElement.removeChild(loader);
+};
+
+export const renderError = (text, parent) => {
+  const displayError = `
+    <div class="error">
+      <div class="container container--small">
+        <p>Oops! Error!</p>
+        <p>${text}</p>
+        <p>And hurry up, coffee is getting cold!</p>
+      </div>
+    </div>
+  `;
+  // parent.insertAdjacentHTML('beforebegin', displayError);
+  parent.innerHTML = displayError;
 };

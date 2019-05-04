@@ -1,7 +1,7 @@
 import Venue from './models/Venue';
 import * as venueView from './views/venueView';
 import { elements, renderLoader, clearLoader } from './views/base';
-import { buildMap, getLocation } from './helpers/helpers';
+import { renderMap, getLocation } from './helpers/helpers';
 
 import '../sass/app.scss';
 
@@ -31,7 +31,7 @@ const controlVenue = async () => {
     venueView.renderVenue(venue);
 
     // render map
-    buildMap(myLat, myLng, venue.coords);
+    renderMap(myLat, myLng, venue.coords);
 
     // Render Tips
     venueView.renderTips(venue);

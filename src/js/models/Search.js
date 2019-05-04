@@ -20,7 +20,7 @@ export default class Search {
       );
       this.venues = response.data.response.groups[0].items;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 }

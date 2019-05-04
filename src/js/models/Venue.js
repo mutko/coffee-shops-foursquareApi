@@ -103,19 +103,4 @@ export default class Venue {
       alert('Error in getting coffee shop DETAILS');
     }
   }
-
-  // async getTips() {
-  //   try {
-  //     const result = await axios('https://api.myjson.com/bins/92xf8');
-  //     const tips = result.data.response.tips.items[0];
-  //     this.tips.text = tips.text;
-  //     this.tips.image = tips.photourl;
-  //     this.tips.agree = tips.agreeCount;
-  //     this.tips.disagree = tips.disagreeCount;
-  //     this.tips.user = `${tips.user.firstName} ${tips.user.lastName}`;
-  //     this.tips.userPhoto = `${tips.user.photo.prefix}240${tips.user.photo.suffix}`;
-  //   } catch (error) {
-  //     alert('Error in getting coffee shop TIPS');
-  //   }
-  // }
 }

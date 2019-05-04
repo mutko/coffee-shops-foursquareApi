@@ -1,7 +1,7 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
-import { elements, renderLoader, clearLoader } from './views/base';
-import { buildMap, getLocation } from './helpers/helpers';
+import { elements, renderLoader, clearLoader, renderError } from './views/base';
+import { renderMap, getLocation } from './helpers/helpers';
 
 import '../sass/app.scss';
 
@@ -25,31 +25,31 @@ const controlSearch = async (radius, open, sort) => {
     await search.getResults();
 
     clearLoader();
+
     // render results
     searchView.renderResults(search.venues);
 
     // render map with new data
-    buildMap(search.lat, search.lng, search.venues);
+    renderMap(search.lat, search.lng, search.venues);
 
     // just for testing DELETE this for production
     console.log(search);
   } catch (error) {
-    // NEED TO DISPLAY SOMETHING MEANINGFULL
-    // NOT ALERT
-    alert('Not good!');
     clearLoader();
+    // geolocation error is rendered from helpers.js
+    console.log(error);
   }
 };
+
 elements.searchForm.addEventListener('click', async e => {
   elements.searchForm.disabled = true;
 
   e.preventDefault();
 
-  const radius = searchView.getInput();
+  const radius = +searchView.getInput();
   const sort = +elements.searchSort.value;
   const open = searchView.getChecked(elements.searchOpen);
 
-  // radius required  maybe I should change this
   await controlSearch(radius, open, sort);
 
   elements.searchForm.disabled = false;

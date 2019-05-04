@@ -1,5 +1,26 @@
+import { elements, renderError } from '../views/base';
+
 function error(err) {
-  alert(`ERROR(${err.code}): ${err.message}`);
+  let message;
+  switch (err.code) {
+    case err.PERMISSION_DENIED:
+      message =
+        'The request for Geolocation is denied. Please reload app and be so kind to give us your location.';
+      break;
+    case err.POSITION_UNAVAILABLE:
+      message =
+        'Location information is unavailable.<br>Try reload app or check your hardware for supporting geolocation.';
+      break;
+    case err.TIMEOUT:
+      message = 'The request to get user location timed out.<br>Try reload app.';
+      break;
+    case err.UNKNOWN_ERROR:
+      message = 'An unknown error occurred. Try hard reset app.';
+      break;
+    default:
+      message = 'An unknown error occurred. Try hard reset app.';
+  }
+  renderError(message, elements.errorWrapper);
 }
 
 // NEED to add proper Resolve and Reject funtions
@@ -9,7 +30,7 @@ export const getLocation = () => {
   });
 };
 
-export const buildMap = (lat, lng, results) => {
+export const renderMap = (lat, lng, results) => {
   // reset map on new results
   document.getElementById('mapid').innerHTML =
     "<div id='map' style='width: 100%; height: 100%;'></div>";

@@ -15,6 +15,28 @@
 .container--small {
   max-width: 760px;
 }
+.error {
+  text-align: center;
+  @include flexCenter();
+  font-size: 1.5rem;
+  padding: 80px 0;
+  @media #{$vertical} {
+    min-height: 600px;
+  }
+  .container {
+    p:first-child {
+      padding-bottom: 40px;
+      font-weight: $bold;
+    }
+    p:last-child {
+      padding-top: 40px;
+      font-weight: $bold;
+    }
+  }
+  @media #{$x-small} {
+    font-size: 1.2rem;
+  }
+}
 .btn {
   display: inline-block;
   background: $titleColor;

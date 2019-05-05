@@ -82,6 +82,12 @@
   height: 100%;
   width: 100%;
 }
+.marker {
+}
+.leaflet-popup-content {
+  margin: 5px 10px;
+  text-align: center;
+}
 .loader {
   text-align: center;
 }

@@ -28,7 +28,7 @@ const controlVenue = async () => {
     venueView.renderTips(venue);
   } catch (error) {
     const message =
-      'Sorry! We probably exceeded details quota for today. To see details of this place try again tomorrow!';
+      'Sorry! Page you search not exist. Try with different coffee shop. If problem continues then we probably exceeded details quota for today. To see details of this place try again tomorrow!';
     const humor = 'Hot coffee will wait here for you!';
     renderError(message, humor);
     elements.errorWrapper.insertAdjacentHTML(

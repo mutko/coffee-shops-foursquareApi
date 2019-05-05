@@ -11,7 +11,12 @@ export const elements = {
   searchResultsList: id('results-list'),
   coffeeShop: id('venue'),
   shopTips: id('venue-tips'),
-  map: id('mapid')
+  map: id('mapid'),
+  clL: id('cl-l'),
+  clR: id('cl-r'),
+  clC: id('cl-c'),
+  blL: id('bl-l'),
+  blR: id('bl-r')
 };
 
 export const renderLoader = parent => {
@@ -43,4 +48,12 @@ export const renderError = (
     </div>
   `;
   parent.innerHTML = displayError;
+};
+
+export const toggleClass = (el, klas) => {
+  el[0].classList.toggle(klas[0]);
+  el[1].classList.toggle(klas[1]);
+  el[2].classList.toggle(klas[2]);
+  el[3].classList.toggle(klas[3]);
+  el[4].classList.toggle(klas[4]);
 };

@@ -7,13 +7,22 @@
   overflow: hidden;
   position: relative;
   background: white;
-  @media #{$medium} {
-  }
 }
 .app-header__title {
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   @include flexCenter();
+  a {
+    margin-right: 10px;
+    @media #{$medium} {
+      margin-right: 30px;
+    }
+  }
+  img {
+    @media #{$x-small} {
+      width: 75px;
+    }
+  }
   h1 {
     text-transform: uppercase;
     margin: 0 0 10px 0;

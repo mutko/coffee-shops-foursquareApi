@@ -9,8 +9,7 @@
 }
 .venue__bg {
   height: 500px;
-  background: url('https://via.placeholder.com/100') no-repeat center;
-  background-size: cover;
+  @include coverBg('https://via.placeholder.com/100');
   @media #{$x-small} {
     height: 200px;
   }

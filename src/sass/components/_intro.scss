@@ -1,24 +1,28 @@
 .intro {
   min-height: 80%;
   font-size: 1.2rem;
+  color: white;
+  position: relative;
+  @include coverBg('https://via.placeholder.com/100');
+  background-attachment: fixed;
   @media #{$vertical} {
     min-height: 48%;
   }
   @media #{$x-small} {
     font-size: 1.1rem;
-  } 
+  }
   @media #{$small} {
     font-size: 1.2rem;
-  } 
+  }
   @media #{$medium} {
+    background: none;
     font-size: calc(1.2rem + 1.2vh);
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
-    color: white;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
     display: block;
     width: 100%;
-    height: 85%;
+    height: 80%;
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 0px;
     visibility: inherit;
     backface-visibility: hidden;
@@ -30,7 +34,7 @@
         font-weight: $bold;
       }
     }
-  } 
+  }
 
   @include flexCenter();
   flex-direction: column;
@@ -44,22 +48,79 @@
   height: 100%;
   overflow: hidden;
 }
+.intro__content {
+  position: relative;
+  z-index: 30;
+}
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .intro__img {
-    margin: 30px 0;
-    animation: pulse 2.5s infinite linear;
-    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
-    @media #{$medium} {
-      margin: 5% 0;
-    }
-    &:hover {
-      animation-play-state: paused;
-    }
-    i:first-child {
-      color: $titleColor;
-    }
+  margin: 30px 0;
+  animation: pulse 2.5s infinite linear;
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  @media #{$medium} {
+    margin: 5% 0;
+  }
+  &:hover {
+    animation-play-state: paused;
+  }
+  i:first-child {
+    color: #6f4e37;
+  }
+}
+.animated__cover {
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  @media #{$medium} {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+.intro__animated {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @media #{$medium} {
+    display: none;
+  }
+}
+.intro__grain {
+  position: absolute;
+  transition: all 2.5s;
+}
+.cl-l {
+  left: 10%;
+  top: 40%;
+}
+.cl-r {
+  right: 5%;
+  top: 45%;
+}
+.cl-c {
+  right: 30%;
+  bottom: 10%;
+}
+.bl-l {
+  left: 20%;
+  top: 55%;
+}
+.bl-r {
+  right: 20%;
+  top: 50%;
 }

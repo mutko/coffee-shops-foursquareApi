@@ -9,3 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@mixin coverBg($url) {
+  background: url($url) no-repeat center;
+  background-size: cover;
+}

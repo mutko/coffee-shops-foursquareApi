@@ -1,63 +1,63 @@
 :root {
-    box-sizing: border-box;
-    font-family: $mainFont;
+  box-sizing: border-box;
+  font-family: $mainFont;
 }
 *,
 ::before,
 ::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
 }
 html {
-    height: 100%;
-    transition: all .33s ease-out;
+  height: 100%;
+  transition: all 0.33s ease-out;
 }
 body {
-    height: 100%;
-    background: $bgPrime;
-    font-size: $mainFontSize;
-    color: $fontColor;
-    line-height: 1.45;
-    @media  #{$x-small} {
-        font-size: .8rem;
-    } 
+  height: 100%;
+  background: $bgPrime;
+  font-size: $mainFontSize;
+  color: $fontColor;
+  line-height: 1.45;
+  @media #{$x-small} {
+    font-size: 0.8rem;
+  }
 }
 h1 {
-    font-size: $mainFontSize + 12;
-    font-weight: $bold;
+  font-size: $mainFontSize + 12;
+  font-weight: $bold;
 }
 h2 {
-    font-size: $mainFontSize + 8;
-    font-weight: $bold;
+  font-size: $mainFontSize + 6;
+  font-weight: $bold;
 }
 h3 {
-    font-size: $mainFontSize + 6;
-    font-weight: $bold;
+  font-size: $mainFontSize + 5;
+  font-weight: $bold;
 }
 h4 {
-    font-size: $mainFontSize + 4;
-    font-weight: $bold;
+  font-size: $mainFontSize + 4;
+  font-weight: $bold;
 }
-a { 
-    text-decoration: none;
-    color: $fontColor;
+a {
+  text-decoration: none;
+  color: $fontColor;
 }
 .video-bg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translate(-50%, -50%);
-    // background: url('  ') no-repeat;
-    background-size: cover;
-    display: none;
-    @media  #{$medium} {
-        display: block;
-    } 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translate(-50%, -50%);
+  // background: url('  ') no-repeat;
+  background-size: cover;
+  display: none;
+  @media #{$medium} {
+    display: block;
   }
+}

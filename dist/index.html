@@ -16,10 +16,12 @@
     <header class="app-header">
       <div class="container">
         <div class="app-header__title">
-          <img src="img/logo.jpg" alt="App logo" width="100" />
+          <a href="index.html" title="Homepage">
+            <img src="img/logo.jpg" alt="App logo" width="100" />
+          </a>
           <div class="app-header__text">
             <h1>Caffeine Rush</h1>
-            <h2>Foursquare API App</h2>
+            <h2>Foursquare API&nbsp;App</h2>
           </div>
         </div>
       </div>
@@ -40,18 +42,38 @@
           <source src="img/video-bg.mp4" type="vide/mp4" />
         </video>
       </div>
+      <div class="animated__cover"></div>
       <div class="container container--small">
-        <p>Start your quest to get caffeinated by tapping on the pulsing coffee icon below.</p>
-        <a href="search.html" title="Find closest coffee shops">
-          <span class="fa-stack fa-3x intro__img">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-coffee fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-        <p>
-          Be so kind to give us your location and we will present to you the best coffee shops
-          within walking distance.
-        </p>
+        <div class="intro__animated">
+          <div id="cl-l" class="intro__grain cl-l">
+            <img src="img/grain1.png" width="75" />
+          </div>
+          <div id="bl-l" class="intro__grain bl-l">
+            <img src="img/grain-blur1.png" width="80" />
+          </div>
+          <div id="cl-r" class="intro__grain cl-r">
+            <img src="img/grain2.png" width="75" />
+          </div>
+          <div id="bl-r" class="intro__grain bl-r">
+            <img src="img/grain-blur2.png" width="75" />
+          </div>
+          <div id="cl-c" class="intro__grain cl-c">
+            <img src="img/grain3.png" width="50" />
+          </div>
+        </div>
+        <div class="intro__content">
+          <p>Start your quest to get caffeinated by tapping on the pulsing coffee icon below.</p>
+          <a href="search.html" title="Find closest coffee shops">
+            <span class="fa-stack fa-3x intro__img">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fas fa-coffee fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+          <p>
+            Be so kind to give us your location and we will present to you the best coffee shops
+            within walking distance.
+          </p>
+        </div>
       </div>
     </main>
 

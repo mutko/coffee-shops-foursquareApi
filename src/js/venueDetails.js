@@ -12,9 +12,9 @@ const controlVenue = async () => {
   const venue = new Venue(id);
 
   // get position coords
-  const position = await getLocation();
-  const myLat = position.coords.latitude;
-  const myLng = position.coords.longitude;
+  // const position = await getLocation();
+  // const myLat = position.coords.latitude;
+  // const myLng = position.coords.longitude;
 
   // Prepare UI
   renderLoader(elements.map);
@@ -24,7 +24,7 @@ const controlVenue = async () => {
     await venue.getVenue();
     clearLoader();
     venueView.renderVenue(venue);
-    renderMap(myLat, myLng, venue.coords);
+    renderMap(localStorage.getItem('userLat'), localStorage.getItem('userLng'), venue.coords);
     venueView.renderTips(venue);
   } catch (error) {
     const message =

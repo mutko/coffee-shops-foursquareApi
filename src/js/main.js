@@ -14,6 +14,8 @@ const controlSearch = async (radius, open, sort) => {
   const position = await getLocation();
   search.lat = position.coords.latitude;
   search.lng = position.coords.longitude;
+  localStorage.setItem('userLat', position.coords.latitude);
+  localStorage.setItem('userLng', position.coords.longitude);
 
   // prepare UI
   // searchView.clearInput();

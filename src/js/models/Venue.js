@@ -19,11 +19,7 @@ export default class Venue {
 
   async getVenue() {
     try {
-      const result = await axios(
-        `https://api.foursquare.com/v2/venues/${
-          this.id
-        }?&v=20190323&client_id=${clientId}&client_secret=${clientSecret}`
-      );
+      const result = await axios('https://api.myjson.com/bins/1h2v10');
       // eslint-disable-next-line prefer-destructuring
       const venue = result.data.response.venue;
       console.log(venue);

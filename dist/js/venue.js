@@ -8219,9 +8219,9 @@
         };
       })(),
       o = e(345),
-      a = (r = o) && r.__esModule ? r : { default: r },
-      u = e(365);
-    var s = (function() {
+      a = (r = o) && r.__esModule ? r : { default: r };
+    e(365);
+    var u = (function() {
       function t() {
         var n =
           arguments.length > 0 && void 0 !== arguments[0]
@@ -8251,14 +8251,7 @@
                             return (
                               (t.prev = 0),
                               (t.next = 3),
-                              (0, a.default)(
-                                'https://api.foursquare.com/v2/venues/' +
-                                  this.id +
-                                  '?&v=20190323&client_id=' +
-                                  u.clientId +
-                                  '&client_secret=' +
-                                  u.clientSecret
-                              )
+                              (0, a.default)('https://api.myjson.com/bins/1h2v10')
                             );
                           case 3:
                             (n = t.sent),
@@ -8383,7 +8376,7 @@
         t
       );
     })();
-    n.default = s;
+    n.default = u;
   },
   function(t, n, e) {
     'use strict';

@@ -11,20 +11,28 @@ const controlVenue = async () => {
 
   const venue = new Venue(id);
 
-  // get position coords
-  // const position = await getLocation();
-  // const myLat = position.coords.latitude;
-  // const myLng = position.coords.longitude;
-
   // Prepare UI
   renderLoader(elements.map);
 
   try {
     // Get venue data
     await venue.getVenue();
+
     clearLoader();
+
     venueView.renderVenue(venue);
-    renderMap(localStorage.getItem('userLat'), localStorage.getItem('userLng'), venue.coords);
+
+    if (typeof Storage !== 'undefined') {
+      // Code for localStorage/sessionStorage.
+      renderMap(localStorage.getItem('userLat'), localStorage.getItem('userLng'), venue.coords);
+    } else {
+      // Sorry! No Web Storage support..
+      const position = await getLocation();
+      const myLat = position.coords.latitude;
+      const myLng = position.coords.longitude;
+      renderMap(myLat, myLng, venue.coords);
+    }
+
     venueView.renderTips(venue);
   } catch (error) {
     const message =

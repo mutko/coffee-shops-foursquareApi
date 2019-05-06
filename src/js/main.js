@@ -12,10 +12,18 @@ const controlSearch = async (radius, open, sort) => {
 
   // get position coords
   const position = await getLocation();
-  search.lat = position.coords.latitude;
-  search.lng = position.coords.longitude;
-  localStorage.setItem('userLat', position.coords.latitude);
-  localStorage.setItem('userLng', position.coords.longitude);
+
+  if (typeof Storage !== 'undefined') {
+    // Code for localStorage/sessionStorage.
+    search.lat = position.coords.latitude;
+    search.lng = position.coords.longitude;
+    localStorage.setItem('userLat', position.coords.latitude);
+    localStorage.setItem('userLng', position.coords.longitude);
+  } else {
+    // Sorry! No Web Storage support..
+    search.lat = position.coords.latitude;
+    search.lng = position.coords.longitude;
+  }
 
   // prepare UI
   // searchView.clearInput();
@@ -32,7 +40,12 @@ const controlSearch = async (radius, open, sort) => {
     searchView.renderResults(search.venues);
 
     // render map with new data
-    renderMap(search.lat, search.lng, search.venues);
+    if (typeof Storage !== 'undefined') {
+      // Code for localStorage/sessionStorage.
+      renderMap(localStorage.getItem('userLat'), localStorage.getItem('userLng'), search.venues);
+    } else {
+      renderMap(search.lat, search.lng, search.venues);
+    }
 
     // just for testing DELETE this for production
     console.log(search);

@@ -9,7 +9,7 @@
 }
 .venue__bg {
   height: 500px;
-  @include coverBg('https://via.placeholder.com/100');
+  @include coverBg('../img/bg.jpg');
   @media #{$x-small} {
     height: 200px;
   }

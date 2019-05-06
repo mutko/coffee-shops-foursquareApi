@@ -3,7 +3,7 @@
   font-size: 1.2rem;
   color: white;
   position: relative;
-  @include coverBg('https://via.placeholder.com/100');
+  @include coverBg('../img/intro.jpg');
   background-attachment: fixed;
   @media #{$vertical} {
     min-height: 48%;

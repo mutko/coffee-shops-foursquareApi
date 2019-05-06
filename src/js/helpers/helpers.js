@@ -20,7 +20,7 @@ function error(err) {
     default:
       message = 'An unknown error occurred. Try hard reset app.';
   }
-  renderError(message, elements.errorWrapper);
+  renderError(message);
 }
 
 // NEED to add proper Resolve and Reject funtions

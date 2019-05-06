@@ -451,8 +451,8 @@
         E = e(37),
         O = e(17),
         P = e(38).f,
-        M = e(84),
-        k = e(34),
+        k = e(84),
+        M = e(34),
         A = e(5),
         j = e(26),
         T = e(53),
@@ -465,8 +465,8 @@
         U = e(113),
         D = e(8),
         B = e(16),
-        W = D.f,
-        V = B.f,
+        V = D.f,
+        W = B.f,
         z = i.RangeError,
         G = i.TypeError,
         q = i.Uint8Array,
@@ -494,8 +494,8 @@
         ht = Y.toLocaleString,
         dt = A('iterator'),
         vt = A('toStringTag'),
-        gt = k('typed_constructor'),
-        mt = k('def_constructor'),
+        gt = M('typed_constructor'),
+        mt = M('def_constructor'),
         yt = u.CONSTR,
         xt = u.TYPED,
         bt = u.VIEW,
@@ -524,15 +524,15 @@
           if (!(w(t) && gt in t)) throw G('It is not a typed array constructor!');
           return new t(n);
         },
-        Mt = function(t, n) {
-          return kt(L(t, t[mt]), n);
-        },
         kt = function(t, n) {
+          return Mt(L(t, t[mt]), n);
+        },
+        Mt = function(t, n) {
           for (var e = 0, r = n.length, i = Pt(t, r); r > e; ) i[e] = n[e++];
           return i;
         },
         At = function(t, n, e) {
-          W(t, n, {
+          V(t, n, {
             get: function() {
               return this._d[e];
             }
@@ -549,7 +549,7 @@
             s = arguments.length,
             f = s > 1 ? arguments[1] : void 0,
             l = void 0 !== f,
-            p = M(u);
+            p = k(u);
           if (null != p && !S(p)) {
             for (a = p.call(u), r = [], n = 0; !(o = a.next()).done; n++) r.push(o.value);
             u = r;
@@ -585,7 +585,7 @@
             return C.apply(Ot(this), arguments);
           },
           filter: function(t) {
-            return Mt(this, $(Ot(this), t, arguments.length > 1 ? arguments[1] : void 0));
+            return kt(this, $(Ot(this), t, arguments.length > 1 ? arguments[1] : void 0));
           },
           find: function(t) {
             return Z(Ot(this), t, arguments.length > 1 ? arguments[1] : void 0);
@@ -640,7 +640,7 @@
           }
         },
         It = function(t, n) {
-          return Mt(this, lt.call(Ot(this), t, n));
+          return kt(this, lt.call(Ot(this), t, n));
         },
         Nt = function(t) {
           Ot(this);
@@ -667,7 +667,7 @@
           return w(t) && t[xt] && 'symbol' != typeof n && n in t && String(+n) == String(n);
         },
         Dt = function(t, n) {
-          return Ut(t, (n = y(n, !0))) ? l(2, t[n]) : V(t, n);
+          return Ut(t, (n = y(n, !0))) ? l(2, t[n]) : W(t, n);
         },
         Bt = function(t, n, e) {
           return !(Ut(t, (n = y(n, !0))) && w(e) && x(e, 'value')) ||
@@ -676,7 +676,7 @@
             e.configurable ||
             (x(e, 'writable') && !e.writable) ||
             (x(e, 'enumerable') && !e.enumerable)
-            ? W(t, n, e)
+            ? V(t, n, e)
             : ((t[n] = e.value), t);
         };
       yt || ((B.f = Dt), (D.f = Bt)),
@@ -687,15 +687,15 @@
           (pt = ht = function() {
             return ct.call(this);
           });
-      var Wt = h({}, Rt);
-      h(Wt, Ct),
-        p(Wt, dt, Ct.values),
-        h(Wt, { slice: It, set: Nt, constructor: function() {}, toString: pt, toLocaleString: Ft }),
-        At(Wt, 'buffer', 'b'),
-        At(Wt, 'byteOffset', 'o'),
-        At(Wt, 'byteLength', 'l'),
-        At(Wt, 'length', 'e'),
-        W(Wt, vt, {
+      var Vt = h({}, Rt);
+      h(Vt, Ct),
+        p(Vt, dt, Ct.values),
+        h(Vt, { slice: It, set: Nt, constructor: function() {}, toString: pt, toLocaleString: Ft }),
+        At(Vt, 'buffer', 'b'),
+        At(Vt, 'byteOffset', 'o'),
+        At(Vt, 'byteLength', 'l'),
+        At(Vt, 'length', 'e'),
+        V(Vt, vt, {
           get: function() {
             return this[xt];
           }
@@ -710,8 +710,8 @@
             x = !d || !u.ABV,
             _ = {},
             S = d && d.prototype,
-            M = function(t, e) {
-              W(t, e, {
+            k = function(t, e) {
+              V(t, e, {
                 get: function() {
                   return (function(t, e) {
                     var r = t._d;
@@ -739,7 +739,7 @@
                   h = 0;
                 if (w(e)) {
                   if (!(e instanceof H || 'ArrayBuffer' == (s = b(e)) || 'SharedArrayBuffer' == s))
-                    return xt in e ? kt(d, e) : jt.call(d, e);
+                    return xt in e ? Mt(d, e) : jt.call(d, e);
                   (o = e), (h = Et(r, n));
                   var m = e.byteLength;
                   if (void 0 === i) {
@@ -748,9 +748,9 @@
                   } else if ((a = v(i) * n) + h > m) throw z('Wrong length!');
                   u = a / n;
                 } else (u = g(e)), (o = new H((a = u * n)));
-                for (p(t, '_d', { b: o, o: h, l: a, e: u, v: new J(o) }); l < u; ) M(t, l++);
+                for (p(t, '_d', { b: o, o: h, l: a, e: u, v: new J(o) }); l < u; ) k(t, l++);
               })),
-              (S = d.prototype = E(Wt)),
+              (S = d.prototype = E(Vt)),
               p(S, 'constructor', d))
             : (o(function() {
                 d(1);
@@ -773,7 +773,7 @@
                         ? new m(e, Et(r, n))
                         : new m(e)
                       : xt in e
-                      ? kt(d, e)
+                      ? Mt(d, e)
                       : jt.call(d, e)
                     : new m(g(e))
                 );
@@ -783,15 +783,15 @@
               }),
               (d.prototype = S),
               r || (S.constructor = d));
-          var k = S[dt],
-            A = !!k && ('values' == k.name || null == k.name),
+          var M = S[dt],
+            A = !!M && ('values' == M.name || null == M.name),
             j = Ct.values;
           p(d, gt, !0),
             p(S, xt, c),
             p(S, bt, !0),
             p(S, mt, d),
             (s ? new d(1)[vt] == c : vt in S) ||
-              W(S, vt, {
+              V(S, vt, {
                 get: function() {
                   return c;
                 }
@@ -835,7 +835,7 @@
               c,
               { toLocaleString: Ft }
             ),
-            (R[c] = A ? k : j),
+            (R[c] = A ? M : j),
             r || A || p(S, dt, j);
         });
     } else t.exports = function() {};
@@ -1549,24 +1549,24 @@
           P = l(function() {
             E.has(1);
           }),
-          M = p(function(t) {
+          k = p(function(t) {
             new x(t);
           }),
-          k =
+          M =
             !m &&
             l(function() {
               for (var t = new x(), n = 5; n--; ) t[b](n, n);
               return !t.has(-0);
             });
-        M ||
+        k ||
           (((x = n(function(n, e) {
             c(n, x, t);
             var r = d(new y(), n, x);
             return null != e && s(e, g, r[b], r), r;
           })).prototype = w),
           (w.constructor = x)),
-          (P || k) && (S('delete'), S('has'), g && S('get')),
-          (k || O) && S(b),
+          (P || M) && (S('delete'), S('has'), g && S('get')),
+          (M || O) && S(b),
           m && w.clear && delete w.clear;
       } else (x = v.getConstructor(n, t, g, b)), a(x.prototype, e), (u.NEED = !0);
       return h(x, t), (_[t] = x), i(i.G + i.W + i.F * (x != y), _), m || v.setStrong(x, t, g), x;
@@ -1793,8 +1793,8 @@
         E = !1,
         O = t.prototype,
         P = O[l] || O['@@iterator'] || (v && O[v]),
-        M = P || w(v),
-        k = v ? (S ? w('entries') : M) : void 0,
+        k = P || w(v),
+        M = v ? (S ? w('entries') : k) : void 0,
         A = ('Array' == n && O.entries) || P;
       if (
         (A &&
@@ -1805,15 +1805,15 @@
           P &&
           'values' !== P.name &&
           ((E = !0),
-          (M = function() {
+          (k = function() {
             return P.call(this);
           })),
-        (r && !m) || (!p && !E && O[l]) || a(O, l, M),
-        (u[n] = M),
+        (r && !m) || (!p && !E && O[l]) || a(O, l, k),
+        (u[n] = k),
         (u[_] = h),
         v)
       )
-        if (((y = { values: S ? M : w('values'), keys: g ? M : w('keys'), entries: k }), m))
+        if (((y = { values: S ? k : w('values'), keys: g ? k : w('keys'), entries: M }), m))
           for (x in y) x in O || o(O, x, y[x]);
         else i(i.P + i.F * (p || E), n, y);
       return y;
@@ -2135,8 +2135,8 @@
       E = r.Infinity,
       O = b,
       P = _.abs,
-      M = _.pow,
-      k = _.floor,
+      k = _.pow,
+      M = _.floor,
       A = _.log,
       j = _.LN2,
       T = i ? '_b' : 'buffer',
@@ -2150,20 +2150,20 @@
         u = 8 * e - n - 1,
         s = (1 << u) - 1,
         c = s >> 1,
-        f = 23 === n ? M(2, -24) - M(2, -77) : 0,
+        f = 23 === n ? k(2, -24) - k(2, -77) : 0,
         l = 0,
         p = t < 0 || (0 === t && 1 / t < 0) ? 1 : 0;
       for (
         (t = P(t)) != t || t === E
           ? ((i = t != t ? 1 : 0), (r = s))
-          : ((r = k(A(t) / j)),
-            t * (o = M(2, -r)) < 1 && (r--, (o *= 2)),
-            (t += r + c >= 1 ? f / o : f * M(2, 1 - c)) * o >= 2 && (r++, (o /= 2)),
+          : ((r = M(A(t) / j)),
+            t * (o = k(2, -r)) < 1 && (r--, (o *= 2)),
+            (t += r + c >= 1 ? f / o : f * k(2, 1 - c)) * o >= 2 && (r++, (o /= 2)),
             r + c >= s
               ? ((i = 0), (r = s))
               : r + c >= 1
-              ? ((i = (t * o - 1) * M(2, n)), (r += c))
-              : ((i = t * M(2, c - 1) * M(2, n)), (r = 0)));
+              ? ((i = (t * o - 1) * k(2, n)), (r += c))
+              : ((i = t * k(2, c - 1) * k(2, n)), (r = 0)));
         n >= 8;
         a[l++] = 255 & i, i /= 256, n -= 8
       );
@@ -2184,9 +2184,9 @@
       if (0 === f) f = 1 - a;
       else {
         if (f === o) return r ? NaN : c ? -E : E;
-        (r += M(2, n)), (f -= a);
+        (r += k(2, n)), (f -= a);
       }
-      return (c ? -1 : 1) * r * M(2, f - n);
+      return (c ? -1 : 1) * r * k(2, f - n);
     }
     function N(t) {
       return (t[3] << 24) | (t[2] << 16) | (t[1] << 8) | t[0];
@@ -2203,10 +2203,10 @@
     function B(t) {
       return R(t, 52, 8);
     }
-    function W(t) {
+    function V(t) {
       return R(t, 23, 4);
     }
-    function V(t, n, e) {
+    function W(t, n, e) {
       v(t[y], n, {
         get: function() {
           return this[e];
@@ -2284,10 +2284,10 @@
           (this[T] = t), (this[F] = i), (this[L] = e);
         }),
         i &&
-          (V(b, 'byteLength', '_l'),
-          V(w, 'buffer', '_b'),
-          V(w, 'byteLength', '_l'),
-          V(w, 'byteOffset', '_o')),
+          (W(b, 'byteLength', '_l'),
+          W(w, 'buffer', '_b'),
+          W(w, 'byteLength', '_l'),
+          W(w, 'byteOffset', '_o')),
         s(w[y], {
           getInt8: function(t) {
             return (z(this, 1, t)[0] << 24) >> 24;
@@ -2334,7 +2334,7 @@
             G(this, 4, t, D, n, arguments[2]);
           },
           setFloat32: function(t, n) {
-            G(this, 4, t, W, n, arguments[2]);
+            G(this, 4, t, V, n, arguments[2]);
           },
           setFloat64: function(t, n) {
             G(this, 8, t, B, n, arguments[2]);
@@ -2382,19 +2382,30 @@
       }),
       (n.renderError = function() {
         var t =
-          '\n    <div class="error">\n      <div class="container container--small">\n        <p>Oops! Error!</p>\n        <p>' +
-          (arguments.length > 0 && void 0 !== arguments[0]
-            ? arguments[0]
-            : 'Please check internet connection or again try later.') +
-          '</p>\n        <p>' +
-          (arguments.length > 1 && void 0 !== arguments[1]
-            ? arguments[1]
-            : 'And hurry up, coffee is getting cold!') +
-          '</p>\n      </div>\n    </div>\n  ';
-        (arguments.length > 2 && void 0 !== arguments[2]
-          ? arguments[2]
+            arguments.length > 0 && void 0 !== arguments[0]
+              ? arguments[0]
+              : 'Please check internet connection or again try later.',
+          n =
+            arguments.length > 1 && void 0 !== arguments[1]
+              ? arguments[1]
+              : 'And hurry up, coffee is getting cold!',
+          e = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : 'index',
+          r =
+            '\n    <div class="error">\n      <div class="container container--small">\n        <p>Oops! Error!</p>\n        <p>' +
+            t +
+            '</p>\n        <p>' +
+            n +
+            '</p>\n        <a href="' +
+            e +
+            '.html" title="Back on ' +
+            e +
+            ' page" class="btn">Back on ' +
+            e +
+            '</a>\n      </div>\n    </div>\n  ';
+        (arguments.length > 3 && void 0 !== arguments[3]
+          ? arguments[3]
           : i.errorWrapper
-        ).innerHTML = t;
+        ).innerHTML = r;
       }),
       (n.toggleClass = function(t, n) {
         t[0].classList.toggle(n[0]),
@@ -3422,8 +3433,8 @@
       E = e(100),
       O = e(16),
       P = e(8),
-      M = e(35),
-      k = O.f,
+      k = e(35),
+      M = O.f,
       A = P.f,
       j = E.f,
       T = r.Symbol,
@@ -3436,9 +3447,9 @@
       U = f('symbols'),
       D = f('op-symbols'),
       B = Object.prototype,
-      W = 'function' == typeof T,
-      V = r.QObject,
-      z = !V || !V.prototype || !V.prototype.findChild,
+      V = 'function' == typeof T,
+      W = r.QObject,
+      z = !W || !W.prototype || !W.prototype.findChild,
       G =
         o &&
         c(function() {
@@ -3454,7 +3465,7 @@
           );
         })
           ? function(t, n, e) {
-              var r = k(B, n);
+              var r = M(B, n);
               r && delete B[n], A(t, n, e), r && t !== B && A(B, n, r);
             }
           : A,
@@ -3463,7 +3474,7 @@
         return (n._k = t), n;
       },
       Y =
-        W && 'symbol' == typeof T.iterator
+        V && 'symbol' == typeof T.iterator
           ? function(t) {
               return 'symbol' == typeof t;
             }
@@ -3498,7 +3509,7 @@
       },
       $ = function(t, n) {
         if (((t = b(t)), (n = w(n, !0)), t !== B || !i(U, n) || i(D, n))) {
-          var e = k(t, n);
+          var e = M(t, n);
           return !e || !i(U, n) || (i(t, R) && t[R][n]) || (e.enumerable = !0), e;
         }
       },
@@ -3512,7 +3523,7 @@
           !i(U, (n = r[a++])) || (e && !i(B, n)) || o.push(U[n]);
         return o;
       };
-    W ||
+    V ||
       (u(
         (T = function() {
           if (this instanceof T) throw TypeError('Symbol is not a constructor!');
@@ -3538,7 +3549,7 @@
       (d.f = function(t) {
         return q(h(t));
       })),
-      a(a.G + a.W + a.F * !W, { Symbol: T });
+      a(a.G + a.W + a.F * !V, { Symbol: T });
     for (
       var Z = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(
           ','
@@ -3548,8 +3559,8 @@
 
     )
       h(Z[tt++]);
-    for (var nt = M(h.store), et = 0; nt.length > et; ) v(nt[et++]);
-    a(a.S + a.F * !W, 'Symbol', {
+    for (var nt = k(h.store), et = 0; nt.length > et; ) v(nt[et++]);
+    a(a.S + a.F * !V, 'Symbol', {
       for: function(t) {
         return i(C, (t += '')) ? C[t] : (C[t] = T(t));
       },
@@ -3564,7 +3575,7 @@
         z = !1;
       }
     }),
-      a(a.S + a.F * !W, 'Object', {
+      a(a.S + a.F * !V, 'Object', {
         create: function(t, n) {
           return void 0 === n ? S(t) : J(S(t), n);
         },
@@ -3578,7 +3589,7 @@
         a(
           a.S +
             a.F *
-              (!W ||
+              (!V ||
                 c(function() {
                   var t = T();
                   return '[null]' != F([t]) || '{}' != F({ a: t }) || '{}' != F(Object(t));
@@ -4970,17 +4981,17 @@
           for (var b, w = '', _ = 0, S = 0; S < y.length; S++) {
             x = y[S];
             for (
-              var E = String(x[0]), O = c(f(a(x.index), p.length), 0), P = [], M = 1;
-              M < x.length;
-              M++
+              var E = String(x[0]), O = c(f(a(x.index), p.length), 0), P = [], k = 1;
+              k < x.length;
+              k++
             )
-              P.push(void 0 === (b = x[M]) ? b : String(b));
-            var k = x.groups;
+              P.push(void 0 === (b = x[k]) ? b : String(b));
+            var M = x.groups;
             if (h) {
               var A = [E].concat(P, O, p);
-              void 0 !== k && A.push(k);
+              void 0 !== M && A.push(M);
               var j = String(n.apply(void 0, A));
-            } else j = v(E, p, O, P, k, n);
+            } else j = v(E, p, O, P, M, n);
             O >= _ && ((w += p.slice(_, O) + j), (_ = O + E.length));
           }
           return w + p.slice(_);
@@ -5183,18 +5194,18 @@
       E = s.process,
       O = E && E.versions,
       P = (O && O.v8) || '',
-      M = s.Promise,
-      k = 'process' == f(E),
+      k = s.Promise,
+      M = 'process' == f(E),
       A = function() {},
       j = (i = x.f),
       T = !!(function() {
         try {
-          var t = M.resolve(1),
+          var t = k.resolve(1),
             n = ((t.constructor = {})[e(5)('species')] = function(t) {
               t(A, A);
             });
           return (
-            (k || 'function' == typeof PromiseRejectionEvent) &&
+            (M || 'function' == typeof PromiseRejectionEvent) &&
             t.then(A) instanceof n &&
             0 !== P.indexOf('6.6') &&
             -1 === w.indexOf('Chrome/66')
@@ -5256,13 +5267,13 @@
           if (
             (o &&
               ((n = b(function() {
-                k
+                M
                   ? E.emit('unhandledRejection', i, t)
                   : (e = s.onunhandledrejection)
                   ? e({ promise: t, reason: i })
                   : (r = s.console) && r.error && r.error('Unhandled promise rejection', i);
               })),
-              (t._h = k || I(t) ? 2 : 1)),
+              (t._h = M || I(t) ? 2 : 1)),
             (t._a = void 0),
             o && n.e)
           )
@@ -5275,7 +5286,7 @@
       N = function(t) {
         m.call(s, function() {
           var n;
-          k
+          M
             ? E.emit('rejectionHandled', t)
             : (n = s.onrejectionhandled) && n({ promise: t, reason: t._v });
         });
@@ -5312,8 +5323,8 @@
         }
       };
     T ||
-      ((M = function(t) {
-        d(this, M, 'Promise', '_h'), h(t), r.call(this);
+      ((k = function(t) {
+        d(this, k, 'Promise', '_h'), h(t), r.call(this);
         try {
           t(c(U, this, 1), c(C, this, 1));
         } catch (t) {
@@ -5328,13 +5339,13 @@
           (this._v = void 0),
           (this._h = 0),
           (this._n = !1);
-      }).prototype = e(42)(M.prototype, {
+      }).prototype = e(42)(k.prototype, {
         then: function(t, n) {
-          var e = j(g(this, M));
+          var e = j(g(this, k));
           return (
             (e.ok = 'function' != typeof t || t),
             (e.fail = 'function' == typeof n && n),
-            (e.domain = k ? E.domain : void 0),
+            (e.domain = M ? E.domain : void 0),
             this._c.push(e),
             this._a && this._a.push(e),
             this._s && F(this, !1),
@@ -5350,10 +5361,10 @@
         (this.promise = t), (this.resolve = c(U, t, 1)), (this.reject = c(C, t, 1));
       }),
       (x.f = j = function(t) {
-        return t === M || t === a ? new o(t) : i(t);
+        return t === k || t === a ? new o(t) : i(t);
       })),
-      l(l.G + l.W + l.F * !T, { Promise: M }),
-      e(44)(M, 'Promise'),
+      l(l.G + l.W + l.F * !T, { Promise: k }),
+      e(44)(k, 'Promise'),
       e(39)('Promise'),
       (a = e(18).Promise),
       l(l.S + l.F * !T, 'Promise', {
@@ -5364,7 +5375,7 @@
       }),
       l(l.S + l.F * (u || !T), 'Promise', {
         resolve: function(t) {
-          return _(u && this === a ? M : this, t);
+          return _(u && this === a ? k : this, t);
         }
       }),
       l(
@@ -5373,7 +5384,7 @@
             !(
               T &&
               e(58)(function(t) {
-                M.all(t).catch(A);
+                k.all(t).catch(A);
               })
             ),
         'Promise',
@@ -6890,7 +6901,7 @@
                 for (e.method = i, e.arg = o; ; ) {
                   var a = e.delegate;
                   if (a) {
-                    var u = M(a, e);
+                    var u = k(a, e);
                     if (u) {
                       if (u === v) continue;
                       return u;
@@ -6963,13 +6974,13 @@
               return (r = r ? r.then(i, i) : i());
             });
         }
-        function M(t, n) {
+        function k(t, n) {
           var r = t.iterator[n.method];
           if (r === e) {
             if (((n.delegate = null), 'throw' === n.method)) {
               if (
                 t.iterator.return &&
-                ((n.method = 'return'), (n.arg = e), M(t, n), 'throw' === n.method)
+                ((n.method = 'return'), (n.arg = e), k(t, n), 'throw' === n.method)
               )
                 return v;
               (n.method = 'throw'),
@@ -6994,7 +7005,7 @@
               (n.delegate = null),
               v);
         }
-        function k(t) {
+        function M(t) {
           var n = { tryLoc: t[0] };
           1 in t && (n.catchLoc = t[1]),
             2 in t && ((n.finallyLoc = t[2]), (n.afterLoc = t[3])),
@@ -7005,7 +7016,7 @@
           (n.type = 'normal'), delete n.arg, (t.completion = n);
         }
         function j(t) {
-          (this.tryEntries = [{ tryLoc: 'root' }]), t.forEach(k, this), this.reset(!0);
+          (this.tryEntries = [{ tryLoc: 'root' }]), t.forEach(M, this), this.reset(!0);
         }
         function T(t) {
           if (t) {
@@ -7078,7 +7089,7 @@
     ]),
       n.push([
         t.i,
-        ':root {\n  box-sizing: border-box;\n  font-family: "Montserrat", "Open Sans", sans-serif; }\n\n*,\n::before,\n::after {\n  box-sizing: inherit;\n  margin: 0;\n  padding: 0;\n  font-family: inherit; }\n\nhtml {\n  height: 100%;\n  transition: all 0.33s ease-out; }\n\nbody {\n  height: 100%;\n  background: #eae7de;\n  font-size: 14px;\n  color: #30271c;\n  line-height: 1.45; }\n  @media all and (max-width: 320px) {\n    body {\n      font-size: 0.8rem; } }\n\nh1 {\n  font-size: 26px;\n  font-weight: 500; }\n\nh2 {\n  font-size: 20px;\n  font-weight: 500; }\n\nh3 {\n  font-size: 19px;\n  font-weight: 500; }\n\nh4 {\n  font-size: 18px;\n  font-weight: 500; }\n\na {\n  text-decoration: none;\n  color: #30271c; }\n\n.video-bg {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  transform: translate(-50%, -50%);\n  background-size: cover;\n  display: none; }\n  @media all and (min-width: 900px) {\n    .video-bg {\n      display: block; } }\n\n.container {\n  padding: 0 15px;\n  margin: 0 auto; }\n  @media all and (min-width: 600px) {\n    .container {\n      padding: 0;\n      width: 560px; } }\n  @media all and (min-width: 900px) {\n    .container {\n      width: 860px; } }\n  @media all and (min-width: 1200px) {\n    .container {\n      width: 1160px; } }\n\n.container--small {\n  max-width: 760px; }\n\n#error-wrapper {\n  text-align: center; }\n  #error-wrapper .btn {\n    margin-bottom: 40px; }\n\n.error {\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 1.5rem;\n  padding: 80px 0; }\n  @media all and (min-height: 800px) {\n    .error {\n      min-height: 600px; } }\n  .error .container p:first-child {\n    padding-bottom: 40px;\n    font-weight: 500; }\n  .error .container p:last-child {\n    padding-top: 40px;\n    font-weight: 500; }\n  @media all and (max-width: 320px) {\n    .error {\n      font-size: 1.2rem; } }\n\n.btn {\n  display: inline-block;\n  background: #a7753a;\n  color: white;\n  border: 2px solid transparent;\n  padding: 15px 30px;\n  vertical-align: middle;\n  letter-spacing: 1.5px;\n  font-weight: normal;\n  text-align: center;\n  touch-action: manipulation;\n  white-space: nowrap;\n  user-select: none;\n  cursor: pointer; }\n  @media all and (max-width: 320px) {\n    .btn {\n      padding: 7px; } }\n  .btn:hover {\n    color: white;\n    background: #464546;\n    border-color: #464546; }\n\n.btn--outline {\n  background: transparent;\n  color: #a7753a;\n  border: 2px solid #a7753a; }\n\n.map {\n  height: 400px;\n  padding: 0 30px; }\n  @media all and (min-width: 600px) {\n    .map {\n      padding: 0; } }\n\n#mapid {\n  height: 100%;\n  width: 100%; }\n\n.loader {\n  text-align: center; }\n\n.tr100 {\n  transform: translateY(100px); }\n\n.tr-80 {\n  transform: translateY(-80px); }\n\n.tr-100 {\n  transform: translateY(-100px); }\n\n.tr-120 {\n  transform: translateY(-120px); }\n\n.tr-50 {\n  transform: translateY(-50px); }\n\n.app-header {\n  min-height: 20%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n  position: relative;\n  background: white; }\n  @media all and (min-height: 800px) {\n    .app-header {\n      min-height: 15%; } }\n\n.app-header__title {\n  text-align: center;\n  letter-spacing: 2px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n  .app-header__title a {\n    margin-right: 10px; }\n    @media all and (min-width: 900px) {\n      .app-header__title a {\n        margin-right: 30px; } }\n  @media all and (max-width: 320px) {\n    .app-header__title img {\n      width: 75px; } }\n  .app-header__title h1 {\n    text-transform: uppercase;\n    margin: 0 0 10px 0; }\n    @media all and (max-width: 320px) {\n      .app-header__title h1 {\n        font-size: 1.2rem; } }\n  @media all and (max-width: 320px) {\n    .app-header__title h2 {\n      font-size: 1rem; } }\n\n.app-footer {\n  background: white;\n  text-align: center;\n  padding: 40px 0;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n  .app-footer .container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column; }\n  .app-footer p {\n    padding: 30px 0; }\n    .app-footer p:last-child {\n      padding-bottom: 0; }\n\n.app-footer__list {\n  list-style: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%; }\n\n.app-footer__item {\n  padding-left: 20px; }\n  .app-footer__item:first-child {\n    padding-left: 0; }\n\n.app-footer__link {\n  display: block;\n  font-size: 20px;\n  color: #30271c;\n  height: 50px;\n  line-height: 50px;\n  text-align: center;\n  width: 50px;\n  border: 1px solid #ccc;\n  border-radius: 100%; }\n  .app-footer__link:hover {\n    color: white;\n    background: #a7753a;\n    border-color: #a7753a; }\n\n.app-footer__img {\n  display: block;\n  width: 100%;\n  max-width: 250px; }\n\n@media all and (min-height: 800px) {\n  .index .app-footer {\n    min-height: 40%;\n    padding: 0; } }\n\n@media all and (min-width: 900px) {\n  .index .app-footer {\n    display: none; } }\n\n.intro {\n  min-height: 80%;\n  font-size: 1.2rem;\n  color: white;\n  position: relative;\n  background: url("img/bg.jpg") no-repeat center;\n  background-size: cover;\n  background-attachment: fixed;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center; }\n  @media all and (min-height: 800px) {\n    .intro {\n      min-height: 48%; } }\n  @media all and (max-width: 320px) {\n    .intro {\n      font-size: 1.1rem; } }\n  @media all and (min-width: 600px) {\n    .intro {\n      font-size: 1.2rem; } }\n  @media all and (min-width: 900px) {\n    .intro {\n      background: none;\n      font-size: calc(1.2rem + 1.2vh);\n      text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);\n      display: block;\n      width: 100%;\n      height: 80%;\n      position: absolute;\n      top: 20%;\n      left: 0px;\n      visibility: inherit;\n      backface-visibility: hidden;\n      opacity: 1; }\n      .intro .container {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%); }\n        .intro .container p:first-child {\n          text-transform: uppercase;\n          font-weight: 500; } }\n\n.full-cover {\n  position: relative;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.intro__content {\n  position: relative;\n  z-index: 30; }\n\n@keyframes pulse {\n  0% {\n    transform: scale(1); }\n  50% {\n    transform: scale(1.1); }\n  100% {\n    transform: scale(1); } }\n\n.intro__img {\n  margin: 30px 0;\n  animation: pulse 2.5s infinite linear;\n  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); }\n  @media all and (min-width: 900px) {\n    .intro__img {\n      margin: 5% 0; } }\n  .intro__img:hover {\n    animation-play-state: paused; }\n  .intro__img i:first-child {\n    color: #6f4e37; }\n\n.animated__cover {\n  width: 100%;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  position: absolute;\n  background: rgba(0, 0, 0, 0.7); }\n  @media all and (min-width: 900px) {\n    .animated__cover {\n      background: rgba(0, 0, 0, 0.4); } }\n\n.intro__animated {\n  position: absolute;\n  z-index: 20;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0; }\n  @media all and (min-width: 900px) {\n    .intro__animated {\n      display: none; } }\n\n.intro__grain {\n  position: absolute;\n  transition: all 2.5s; }\n\n.cl-l {\n  left: 10%;\n  top: 40%; }\n\n.cl-r {\n  right: 5%;\n  top: 45%; }\n\n.cl-c {\n  right: 30%;\n  bottom: 10%; }\n\n.bl-l {\n  left: 20%;\n  top: 55%; }\n\n.bl-r {\n  right: 20%;\n  top: 50%; }\n\n.wrapper {\n  text-align: center; }\n  @media all and (min-width: 900px) {\n    .wrapper {\n      display: flex;\n      justify-content: center;\n      width: 860px;\n      margin: 0 auto;\n      padding-bottom: 60px; } }\n  @media all and (min-width: 1200px) {\n    .wrapper {\n      width: 1160px; } }\n  @media all and (min-width: 900px) {\n    .wrapper .results {\n      flex: 2; } }\n  @media all and (min-width: 900px) {\n    .wrapper .map {\n      flex: 3; } }\n\n.results__list {\n  list-style: none;\n  padding: 0 15px; }\n  @media all and (min-width: 900px) {\n    .results__list {\n      padding: 0 20px 0 0; } }\n\n.results__item {\n  max-width: 500px;\n  margin: 0 auto;\n  text-align: left; }\n  @media all and (min-width: 900px) {\n    .results__item:last-child {\n      margin-bottom: -20px; } }\n\n.results__link {\n  display: block;\n  background: white;\n  border-left: 3px solid #a7753a;\n  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);\n  padding: 20px;\n  margin-bottom: 20px; }\n  .results__link span {\n    float: right; }\n  .results__link:hover {\n    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6); }\n\n.search__input {\n  padding: 5px 0 5px 5px;\n  border: 1px solid #ccc;\n  font-size: 14px;\n  height: 35px;\n  width: 100%;\n  line-height: 35px; }\n\n.search__check {\n  height: 0;\n  width: 0;\n  display: none; }\n\n.search__form {\n  max-width: 500px;\n  margin: 0 auto; }\n  .search__form div {\n    padding-top: 20px; }\n  .search__form label {\n    display: block;\n    font-weight: bold; }\n  .search__form span {\n    font-weight: bold; }\n  .search__form .btn {\n    text-transform: uppercase;\n    display: block;\n    width: 100%;\n    margin: 20px 0 40px; }\n  @media all and (min-width: 900px) {\n    .search__form {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      max-width: none;\n      padding: 40px 0; }\n      .search__form div {\n        padding-top: 0;\n        width: 200px; }\n      .search__form div + div {\n        padding: 0 40px; }\n      .search__form .btn {\n        width: 150px;\n        height: 55px;\n        margin: 0; } }\n\n.search__label {\n  cursor: pointer;\n  text-indent: -9999px;\n  width: 80px;\n  height: 35px;\n  background: #ccc;\n  display: block;\n  position: relative; }\n  .search__label::after {\n    content: \'\';\n    position: absolute;\n    top: 5px;\n    left: 5px;\n    width: 25px;\n    height: 25px;\n    background: white;\n    transition: 0.3s; }\n\n.search__check:checked + .search__label {\n  background: #a7753a; }\n  .search__check:checked + .search__label::after {\n    left: calc(100% - 5px);\n    transform: translateX(-100%); }\n\n.search__label:active::after {\n  width: 70px; }\n\n.details {\n  background: white; }\n\n.venue {\n  margin: 0 auto;\n  text-align: center;\n  position: relative;\n  top: -100px; }\n\n.venue__bg {\n  height: 500px;\n  background: url("img/bg.jpg") no-repeat center;\n  background-size: cover; }\n  @media all and (max-width: 320px) {\n    .venue__bg {\n      height: 200px; } }\n\n.venue__label {\n  text-transform: uppercase;\n  font-size: 1rem;\n  font-weight: 900; }\n\n.venue__header {\n  padding: 40px 10px;\n  background: white; }\n  .venue__header h2 {\n    font-size: 8vw;\n    color: #a7753a; }\n    @media all and (min-width: 900px) {\n      .venue__header h2 {\n        font-size: 5rem; } }\n\n.venue__contact {\n  padding: 30px;\n  font-size: 1.4rem;\n  background: #f2f2f2; }\n  .venue__contact p {\n    margin-bottom: 30px;\n    position: relative; }\n    @media all and (min-width: 900px) {\n      .venue__contact p {\n        text-align: left;\n        padding-left: 30px; } }\n  @media all and (max-width: 320px) {\n    .venue__contact {\n      padding: 10px; }\n      .venue__contact p {\n        font-size: 1rem;\n        margin-bottom: 20px; } }\n  .venue__contact i {\n    color: #a7753a;\n    padding-right: 10px; }\n\n.venue__info {\n  padding: 40px;\n  background: #ccc;\n  display: flex;\n  flex-wrap: wrap; }\n  .venue__info div {\n    width: 50%; }\n  @media all and (max-width: 320px) {\n    .venue__info {\n      flex-wrap: nowrap;\n      flex-direction: column;\n      align-items: center; }\n      .venue__info div {\n        width: 100%; } }\n  .venue__info i {\n    color: #a7753a;\n    padding-right: 0; }\n    .venue__info i.light {\n      color: #a9a9a9; }\n\n.venue__img {\n  display: block;\n  width: 100%;\n  height: auto; }\n\n.venue-tips {\n  font-size: 1.4rem;\n  padding: 80px 0 60px;\n  background: #f2f2f2; }\n  @media all and (max-width: 320px) {\n    .venue-tips {\n      font-size: 1rem; } }\n  .venue-tips h3 {\n    padding-bottom: 20px;\n    border-bottom: 2px solid #a7753a;\n    margin-bottom: 40px;\n    text-transform: uppercase;\n    font-weight: 900; }\n\n.tips {\n  display: flex;\n  align-items: flex-start; }\n\n.tips__img {\n  display: block;\n  width: 120px;\n  height: 120px;\n  margin-right: 20px;\n  flex: 0 0 120px; }\n  @media all and (max-width: 320px) {\n    .tips__img {\n      flex: 0 0 64px;\n      width: 64px;\n      height: 64px;\n      margin-right: 10px; } }\n\n.tips__user {\n  font-weight: 500;\n  color: #a7753a; }\n\n.tips__text {\n  padding: 20px 0; }\n\n.tips__likes {\n  text-align: center;\n  color: #a7753a; }\n  .tips__likes span:first-child {\n    padding-right: 40px; }\n    @media all and (max-width: 320px) {\n      .tips__likes span:first-child {\n        padding-right: 10px; } }\n',
+        ':root {\n  box-sizing: border-box;\n  font-family: "Montserrat", "Open Sans", sans-serif; }\n\n*,\n::before,\n::after {\n  box-sizing: inherit;\n  margin: 0;\n  padding: 0;\n  font-family: inherit; }\n\nhtml {\n  height: 100%;\n  transition: all 0.33s ease-out; }\n\nbody {\n  height: 100%;\n  background: #eae7de;\n  font-size: 14px;\n  color: #30271c;\n  line-height: 1.45; }\n  @media all and (max-width: 320px) {\n    body {\n      font-size: 0.8rem; } }\n\nh1 {\n  font-size: 26px;\n  font-weight: 500; }\n\nh2 {\n  font-size: 20px;\n  font-weight: 500; }\n\nh3 {\n  font-size: 19px;\n  font-weight: 500; }\n\nh4 {\n  font-size: 18px;\n  font-weight: 500; }\n\na {\n  text-decoration: none;\n  color: #30271c; }\n\n.video-bg {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  min-width: 100%;\n  min-height: 100%;\n  width: auto;\n  height: auto;\n  z-index: -100;\n  transform: translate(-50%, -50%);\n  background-size: cover;\n  display: none; }\n  @media all and (min-width: 900px) {\n    .video-bg {\n      display: block; } }\n\n.container {\n  padding: 0 15px;\n  margin: 0 auto; }\n  @media all and (min-width: 600px) {\n    .container {\n      padding: 0;\n      width: 560px; } }\n  @media all and (min-width: 900px) {\n    .container {\n      width: 860px; } }\n  @media all and (min-width: 1200px) {\n    .container {\n      width: 1160px; } }\n\n.container--small {\n  max-width: 760px; }\n\n.error {\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 1.5rem;\n  padding: 80px 0; }\n  .error .btn {\n    margin-top: 40px; }\n  @media all and (min-height: 800px) {\n    .error {\n      min-height: 600px; } }\n  .error .container p:first-child {\n    padding-bottom: 40px;\n    font-weight: 500; }\n  .error .container p:last-child {\n    padding-top: 40px;\n    font-weight: 500; }\n  @media all and (max-width: 320px) {\n    .error {\n      font-size: 1.2rem; } }\n\n.btn {\n  display: inline-block;\n  background: #a7753a;\n  color: white;\n  border: 2px solid transparent;\n  padding: 15px 30px;\n  vertical-align: middle;\n  letter-spacing: 1.5px;\n  font-weight: normal;\n  text-align: center;\n  touch-action: manipulation;\n  white-space: nowrap;\n  user-select: none;\n  cursor: pointer; }\n  @media all and (max-width: 320px) {\n    .btn {\n      padding: 7px; } }\n  .btn:hover {\n    color: white;\n    background: #464546;\n    border-color: #464546; }\n\n.btn--outline {\n  background: transparent;\n  color: #a7753a;\n  border: 2px solid #a7753a; }\n\n.map {\n  height: 400px;\n  padding: 0 30px; }\n  @media all and (min-width: 600px) {\n    .map {\n      padding: 0; } }\n\n#mapid {\n  height: 100%;\n  width: 100%; }\n\n.leaflet-popup-content {\n  margin: 5px 10px;\n  text-align: center; }\n\n.loader {\n  text-align: center; }\n\n.tr100 {\n  transform: translateY(100px); }\n\n.tr-80 {\n  transform: translateY(-80px); }\n\n.tr-100 {\n  transform: translateY(-100px); }\n\n.tr-120 {\n  transform: translateY(-120px); }\n\n.tr-50 {\n  transform: translateY(-50px); }\n\n.app-header {\n  min-height: 20%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n  position: relative;\n  background: white; }\n  @media all and (min-height: 800px) {\n    .app-header {\n      min-height: 15%; } }\n\n.app-header__title {\n  text-align: center;\n  letter-spacing: 2px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n  .app-header__title a {\n    width: 75px;\n    margin-right: 10px; }\n    @media all and (min-width: 600px) {\n      .app-header__title a {\n        margin-right: 30px; } }\n    @media all and (min-width: 900px) {\n      .app-header__title a {\n        margin-right: 50px; } }\n  .app-header__title img {\n    width: 75px; }\n    @media all and (max-width: 400px) {\n      .app-header__title img {\n        width: 55px; } }\n  .app-header__title h1 {\n    text-transform: uppercase;\n    margin: 0 0 10px 0; }\n    @media all and (max-width: 400px) {\n      .app-header__title h1 {\n        font-size: 1.2rem; } }\n  @media all and (max-width: 400px) {\n    .app-header__title h2 {\n      font-size: 1rem; } }\n\n.app-footer {\n  background: white;\n  text-align: center;\n  padding: 40px 0;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n  .app-footer .container {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    flex-direction: column; }\n  .app-footer p {\n    padding: 30px 0; }\n    .app-footer p:last-child {\n      padding-bottom: 0; }\n\n.app-footer__list {\n  list-style: none;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%; }\n\n.app-footer__item {\n  padding-left: 20px; }\n  .app-footer__item:first-child {\n    padding-left: 0; }\n\n.app-footer__link {\n  display: block;\n  font-size: 20px;\n  color: #30271c;\n  height: 50px;\n  line-height: 50px;\n  text-align: center;\n  width: 50px;\n  border: 1px solid #ccc;\n  border-radius: 100%; }\n  .app-footer__link:hover {\n    color: white;\n    background: #a7753a;\n    border-color: #a7753a; }\n\n.app-footer__img {\n  display: block;\n  width: 100%;\n  max-width: 250px; }\n\n@media all and (min-height: 800px) {\n  .index .app-footer {\n    min-height: 40%;\n    padding: 0; } }\n\n@media all and (min-width: 900px) {\n  .index .app-footer {\n    display: none; } }\n\n.intro {\n  min-height: 80%;\n  font-size: 1.2rem;\n  color: white;\n  position: relative;\n  background: url("img/bg.jpg") no-repeat center;\n  background-size: cover;\n  background-attachment: fixed;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n  text-align: center; }\n  @media all and (min-height: 800px) {\n    .intro {\n      min-height: 48%; } }\n  @media all and (max-width: 320px) {\n    .intro {\n      font-size: 1.1rem; } }\n  @media all and (min-width: 600px) {\n    .intro {\n      font-size: 1.2rem; } }\n  @media all and (min-width: 900px) {\n    .intro {\n      background: none;\n      font-size: calc(1.2rem + 1.2vh);\n      text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);\n      display: block;\n      width: 100%;\n      height: 80%;\n      position: absolute;\n      top: 20%;\n      left: 0px;\n      visibility: inherit;\n      backface-visibility: hidden;\n      opacity: 1; }\n      .intro .container {\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%); }\n        .intro .container p:first-child {\n          text-transform: uppercase;\n          font-weight: 500; } }\n\n.full-cover {\n  position: relative;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n\n.intro__content {\n  position: relative;\n  z-index: 30; }\n\n@keyframes pulse {\n  0% {\n    transform: scale(1); }\n  50% {\n    transform: scale(1.1); }\n  100% {\n    transform: scale(1); } }\n\n.intro__img {\n  margin: 30px 0;\n  animation: pulse 2.5s infinite linear;\n  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); }\n  @media all and (min-width: 900px) {\n    .intro__img {\n      margin: 5% 0; } }\n  .intro__img:hover {\n    animation-play-state: paused; }\n  .intro__img i:first-child {\n    color: #6f4e37; }\n\n.animated__cover {\n  width: 100%;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  position: absolute;\n  background: rgba(0, 0, 0, 0.7); }\n  @media all and (min-width: 900px) {\n    .animated__cover {\n      background: rgba(0, 0, 0, 0.4); } }\n\n.intro__animated {\n  position: absolute;\n  z-index: 20;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0; }\n  @media all and (min-width: 900px) {\n    .intro__animated {\n      display: none; } }\n\n.intro__grain {\n  position: absolute;\n  transition: all 2.5s; }\n\n.cl-l {\n  left: 10%;\n  top: 40%; }\n\n.cl-r {\n  right: 5%;\n  top: 45%; }\n\n.cl-c {\n  right: 30%;\n  bottom: 10%; }\n\n.bl-l {\n  left: 20%;\n  top: 55%; }\n\n.bl-r {\n  right: 20%;\n  top: 50%; }\n\n.wrapper {\n  text-align: center; }\n  @media all and (min-width: 900px) {\n    .wrapper {\n      display: flex;\n      justify-content: center;\n      width: 860px;\n      margin: 0 auto;\n      padding-bottom: 60px; } }\n  @media all and (min-width: 1200px) {\n    .wrapper {\n      width: 1160px; } }\n  @media all and (min-width: 900px) {\n    .wrapper .results {\n      flex: 2; } }\n  @media all and (min-width: 900px) {\n    .wrapper .map {\n      flex: 3; } }\n\n.results__list {\n  list-style: none;\n  padding: 0 15px; }\n  @media all and (min-width: 900px) {\n    .results__list {\n      padding: 0 20px 0 0; } }\n\n.results__item {\n  max-width: 500px;\n  margin: 0 auto;\n  text-align: left; }\n  @media all and (min-width: 900px) {\n    .results__item:last-child {\n      margin-bottom: -20px; } }\n\n.results__link {\n  display: block;\n  background: white;\n  border-left: 3px solid #a7753a;\n  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);\n  padding: 20px;\n  margin-bottom: 20px; }\n  .results__link span {\n    float: right; }\n  .results__link:hover {\n    box-shadow: 0 1px 7px rgba(0, 0, 0, 0.6); }\n\n.search__input {\n  padding: 5px 0 5px 5px;\n  border: 1px solid #ccc;\n  font-size: 14px;\n  height: 35px;\n  width: 100%;\n  line-height: 35px; }\n\n.search__check {\n  height: 0;\n  width: 0;\n  display: none; }\n\n.search__form {\n  max-width: 500px;\n  margin: 0 auto; }\n  .search__form div {\n    padding-top: 20px; }\n  .search__form label {\n    display: block;\n    font-weight: bold; }\n  .search__form span {\n    font-weight: bold; }\n  .search__form .btn {\n    text-transform: uppercase;\n    display: block;\n    width: 100%;\n    margin: 20px 0 40px; }\n  @media all and (min-width: 900px) {\n    .search__form {\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      max-width: none;\n      padding: 40px 0; }\n      .search__form div {\n        padding-top: 0;\n        width: 200px; }\n      .search__form div + div {\n        padding: 0 40px; }\n      .search__form .btn {\n        width: 150px;\n        height: 55px;\n        margin: 0; } }\n\n.search__label {\n  cursor: pointer;\n  text-indent: -9999px;\n  width: 80px;\n  height: 35px;\n  background: #ccc;\n  display: block;\n  position: relative; }\n  .search__label::after {\n    content: \'\';\n    position: absolute;\n    top: 5px;\n    left: 5px;\n    width: 25px;\n    height: 25px;\n    background: white;\n    transition: 0.3s; }\n\n.search__check:checked + .search__label {\n  background: #a7753a; }\n  .search__check:checked + .search__label::after {\n    left: calc(100% - 5px);\n    transform: translateX(-100%); }\n\n.search__label:active::after {\n  width: 70px; }\n\n.details {\n  background: white; }\n\n.venue {\n  margin: 0 auto;\n  text-align: center;\n  position: relative;\n  top: -100px; }\n\n.venue__bg {\n  height: 500px;\n  background: url("img/bg.jpg") no-repeat center;\n  background-size: cover; }\n  @media all and (max-width: 320px) {\n    .venue__bg {\n      height: 200px; } }\n\n.venue__label {\n  text-transform: uppercase;\n  font-size: 1rem;\n  font-weight: 900; }\n\n.venue__header {\n  padding: 40px 10px;\n  background: white; }\n  .venue__header h2 {\n    font-size: 8vw;\n    color: #a7753a; }\n    @media all and (min-width: 900px) {\n      .venue__header h2 {\n        font-size: 5rem; } }\n\n.venue__contact {\n  padding: 30px;\n  font-size: 1.4rem;\n  background: #f2f2f2; }\n  .venue__contact p {\n    margin-bottom: 30px;\n    position: relative; }\n    @media all and (min-width: 900px) {\n      .venue__contact p {\n        text-align: left;\n        padding-left: 30px; } }\n  @media all and (max-width: 320px) {\n    .venue__contact {\n      padding: 10px; }\n      .venue__contact p {\n        font-size: 1rem;\n        margin-bottom: 20px; } }\n  .venue__contact i {\n    color: #a7753a;\n    padding-right: 10px; }\n\n.venue__info {\n  padding: 40px;\n  background: #ccc;\n  display: flex;\n  flex-wrap: wrap; }\n  .venue__info div {\n    width: 50%; }\n  @media all and (max-width: 320px) {\n    .venue__info {\n      flex-wrap: nowrap;\n      flex-direction: column;\n      align-items: center; }\n      .venue__info div {\n        width: 100%; } }\n  .venue__info i {\n    color: #a7753a;\n    padding-right: 0; }\n    .venue__info i.light {\n      color: #a9a9a9; }\n\n.venue__img {\n  display: block;\n  width: 100%;\n  height: auto; }\n\n.venue-tips {\n  font-size: 1.4rem;\n  padding: 80px 0 60px;\n  background: #f2f2f2; }\n  @media all and (max-width: 320px) {\n    .venue-tips {\n      font-size: 1rem; } }\n  .venue-tips h3 {\n    padding-bottom: 20px;\n    border-bottom: 2px solid #a7753a;\n    margin-bottom: 40px;\n    text-transform: uppercase;\n    font-weight: 900; }\n\n.tips {\n  display: flex;\n  align-items: flex-start; }\n\n.tips__img {\n  display: block;\n  width: 120px;\n  height: 120px;\n  margin-right: 20px;\n  flex: 0 0 120px; }\n  @media all and (max-width: 320px) {\n    .tips__img {\n      flex: 0 0 64px;\n      width: 64px;\n      height: 64px;\n      margin-right: 10px; } }\n\n.tips__user {\n  font-weight: 500;\n  color: #a7753a; }\n\n.tips__text {\n  padding: 20px 0; }\n\n.tips__likes {\n  text-align: center;\n  color: #a7753a; }\n  .tips__likes span:first-child {\n    padding-right: 40px; }\n    @media all and (max-width: 320px) {\n      .tips__likes span:first-child {\n        padding-right: 10px; } }\n',
         ''
       ]);
   },
@@ -8044,7 +8055,7 @@
         default:
           n = 'An unknown error occurred. Try hard reset app.';
       }
-      (0, r.renderError)(n, r.elements.errorWrapper);
+      (0, r.renderError)(n);
     }
     (n.getLocation = function() {
       return new Promise(function(t, n) {
@@ -8059,12 +8070,32 @@
             attribution:
               'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
           }),
-          i = new L.Map('map'),
-          o = L.icon({ iconUrl: '../img/me.png', iconSize: [60, 60] });
-        i.setView(new L.LatLng(t, n), 14), i.addLayer(r), i.scrollWheelZoom.disable();
-        L.marker([t, n], { icon: o }).addTo(i);
-        for (var a = 0; a < e.length; a += 1)
-          new L.marker([e[a].venue.location.lat, e[a].venue.location.lng]).addTo(i);
+          i = L.map('map', { scrollWheelZoom: !1 });
+        function o(t) {
+          i.setView(t.target.getLatLng(), 14);
+        }
+        i.setView(new L.LatLng(t, n), 14),
+          i.addLayer(r),
+          L.marker([t, n])
+            .bindTooltip('User location', { sticky: !0 })
+            .openTooltip()
+            .addTo(i),
+          e.forEach(function(t) {
+            L.marker([t.venue.location.lat, t.venue.location.lng], {
+              title: t.venue.name,
+              riseOnHover: !0
+            })
+              .addTo(i)
+              .bindPopup(
+                '<a href="venue.html?id=' +
+                  t.venue.id +
+                  '" title="View coffee shop details">' +
+                  t.venue.name +
+                  '</a>',
+                { closeButton: !1, closeOnClick: !1 }
+              )
+              .on('click', o);
+          });
       });
   },
   ,
@@ -8120,22 +8151,19 @@
                     s.renderVenue(e),
                     (0, f.renderMap)(i, o, e.coords),
                     s.renderTips(e),
-                    (t.next = 23);
+                    (t.next = 22);
                   break;
                 case 17:
                   (t.prev = 17),
                     (t.t0 = t.catch(8)),
-                    'Sorry! We probably exceeded details quota for today. To see details of this place try again tomorrow!',
+                    'Sorry! Page you search not exist. Try with different coffee shop. If problem continues then we probably exceeded details quota for today. To see details of this place try again tomorrow!',
                     'Hot coffee will wait here for you!',
                     (0, c.renderError)(
-                      'Sorry! We probably exceeded details quota for today. To see details of this place try again tomorrow!',
-                      'Hot coffee will wait here for you!'
-                    ),
-                    c.elements.errorWrapper.insertAdjacentHTML(
-                      'beforeend',
-                      '<a href="search.html" title="Back on search page" class="btn">Back on search</a>'
+                      'Sorry! Page you search not exist. Try with different coffee shop. If problem continues then we probably exceeded details quota for today. To see details of this place try again tomorrow!',
+                      'Hot coffee will wait here for you!',
+                      'search'
                     );
-                case 23:
+                case 22:
                 case 'end':
                   return t.stop();
               }

@@ -35,13 +35,13 @@ export const renderMap = (lat, lng, results) => {
   document.getElementById('mapid').innerHTML =
     "<div id='map' style='width: 100%; height: 100%;'></div>";
 
-  const osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-  const osmAttribution =
-    'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,' +
-    ' <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>';
-  const osmLayer = new L.TileLayer(osmUrl, { maxZoom: 18, attribution: osmAttribution });
+  const map = L.map('map');
 
-  let map = L.map('map', { scrollWheelZoom: false });
+  const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  const osmAttribution =
+    'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors,' +
+    ' <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>';
+  const osmLayer = new L.TileLayer(osmUrl, { maxZoom: 18, attribution: osmAttribution });
 
   function clickZoom(e) {
     map.setView(e.target.getLatLng(), 14);
@@ -50,13 +50,13 @@ export const renderMap = (lat, lng, results) => {
   map.addLayer(osmLayer);
   // map.scrollWheelZoom.disable();
 
-  L.marker([lat, lng])
+  L.marker([lat, lng], { riseOnHover: true })
     .bindTooltip('User location', { sticky: true })
     .openTooltip()
     .addTo(map);
 
   results.forEach(el => {
-    let marker = L.marker([el.venue.location.lat, el.venue.location.lng], {
+    L.marker([el.venue.location.lat, el.venue.location.lng], {
       title: el.venue.name,
       riseOnHover: true
     })

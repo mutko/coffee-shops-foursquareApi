@@ -79,11 +79,13 @@
   height: 100%;
   width: 100%;
 }
-.marker {
-}
 .leaflet-popup-content {
-  margin: 5px 10px;
+  margin: 0;
   text-align: center;
+  a {
+    padding: 15px 10px;
+    display: block;
+  }
 }
 .loader {
   text-align: center;

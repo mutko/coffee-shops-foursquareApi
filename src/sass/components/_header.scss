@@ -13,25 +13,30 @@
   letter-spacing: 2px;
   @include flexCenter();
   a {
+    width: 75px;
     margin-right: 10px;
-    @media #{$medium} {
+    @media #{$small} {
       margin-right: 30px;
+    }
+    @media #{$medium} {
+      margin-right: 50px;
     }
   }
   img {
-    @media #{$x-small} {
-      width: 75px;
+    width: 75px;
+    @media all and (max-width: 400px) {
+      width: 55px;
     }
   }
   h1 {
     text-transform: uppercase;
     margin: 0 0 10px 0;
-    @media #{$x-small} {
+    @media all and (max-width: 400px) {
       font-size: 1.2rem;
     }
   }
   h2 {
-    @media #{$x-small} {
+    @media all and (max-width: 400px) {
       font-size: 1rem;
     }
   }

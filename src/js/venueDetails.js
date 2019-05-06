@@ -30,11 +30,11 @@ const controlVenue = async () => {
     const message =
       'Sorry! Page you search not exist. Try with different coffee shop. If problem continues then we probably exceeded details quota for today. To see details of this place try again tomorrow!';
     const humor = 'Hot coffee will wait here for you!';
-    renderError(message, humor);
-    elements.errorWrapper.insertAdjacentHTML(
-      'beforeend',
-      `<a href="search.html" title="Back on search page" class="btn">Back on search</a>`
-    );
+    renderError(message, humor, 'search');
+    // elements.errorWrapper.insertAdjacentHTML(
+    //   'beforeend',
+    //   `<a href="search.html" title="Back on search page" class="btn">Back on search</a>`
+    // );
   }
 };
 

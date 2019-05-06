@@ -42,46 +42,31 @@ export const renderMap = (lat, lng, results) => {
   const osmLayer = new L.TileLayer(osmUrl, { maxZoom: 18, attribution: osmAttribution });
 
   let map = L.map('map', { scrollWheelZoom: false });
-  map.setView(new L.LatLng(lat, lng), 15);
+
+  function clickZoom(e) {
+    map.setView(e.target.getLatLng(), 14);
+  }
+  map.setView(new L.LatLng(lat, lng), 14);
   map.addLayer(osmLayer);
   // map.scrollWheelZoom.disable();
-  // const myIcon = L.icon({
-  //   iconUrl: '../img/me.png',
-  //   iconSize: [60, 60]
-  // });
-  L.marker([lat, lng]).addTo(map);
 
-  const addMarker = (latt, lngt, name, id) => {
-    const coords = [latt, lngt];
-    L.popup({
-      closeButton: false,
-      autoClose: false,
-      closeOnEscapeKey: false,
-      closeOnClick: false,
-      keepInView: true,
-      className: 'marker'
-    })
-      .setLatLng(coords)
-      .setContent(
-        `<a href="venue.html?id=${id}" title="View details of this coffee shop">${name}</a>`
-      )
-      .addTo(map)
-      .getPopup();
-  };
+  L.marker([lat, lng])
+    .bindTooltip('User location', { sticky: true })
+    .openTooltip()
+    .addTo(map);
 
   results.forEach(el => {
-    // L.marker([el.venue.location.lat, el.venue.location.lng]).addTo(map);
-    addMarker(el.venue.location.lat, el.venue.location.lng, el.venue.name, el.venue.id);
-    // L.popup()
-    //   .setLatLng([x.venue.location.lat, x.venue.location.lng])
-    //   .setContent('I am a standalone popup.')
-    //   .addTo(map);
-  });
-
-  function bringToFront() {
-    this.style.zIndex += '1';
-  }
-  Array.from(document.querySelectorAll('.marker')).forEach(el => {
-    el.addEventListener('click', bringToFront);
+    let marker = L.marker([el.venue.location.lat, el.venue.location.lng], {
+      title: el.venue.name,
+      riseOnHover: true
+    })
+      .addTo(map)
+      .bindPopup(
+        `<a href="venue.html?id=${el.venue.id}" title="View coffee shop details">${
+          el.venue.name
+        }</a>`,
+        { closeButton: false, closeOnClick: false }
+      )
+      .on('click', clickZoom);
   });
 };

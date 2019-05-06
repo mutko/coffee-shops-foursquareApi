@@ -36,6 +36,7 @@ export const clearLoader = () => {
 export const renderError = (
   text = 'Please check internet connection or again try later.',
   humor = 'And hurry up, coffee is getting cold!',
+  btn = 'index',
   parent = elements.errorWrapper
 ) => {
   const displayError = `
@@ -44,6 +45,7 @@ export const renderError = (
         <p>Oops! Error!</p>
         <p>${text}</p>
         <p>${humor}</p>
+        <a href="${btn}.html" title="Back on ${btn} page" class="btn">Back on ${btn}</a>
       </div>
     </div>
   `;

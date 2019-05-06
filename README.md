@@ -18,7 +18,7 @@ The list should display 10 coffee shops with following data:
   * Tips for the place
   
 ### Technical Stack
-  - Needs to be **responsive**
+  - Needs to be **responsive** and work in newer versions of **Chrome** and **Firefox**
   - **CSS3** transitions and effects would be nice
   - Usage of **geolocation API**, to detect user location
   - **Vanilla JavaScript prefered**

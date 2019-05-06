@@ -24,6 +24,7 @@ The list should display 10 coffee shops with following data:
   - **Vanilla JavaScript prefered**
   - If there is an error user sshould know about it nicely
   - Usage of **build tools**
+    - Webpack, Babel, EsLint with Airbnb style, Sass
   
  ### Bonus 
   - Display Coffee Shops on map

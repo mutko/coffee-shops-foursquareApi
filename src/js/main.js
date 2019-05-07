@@ -46,17 +46,12 @@ const controlSearch = async (radius, open, sort) => {
     } else {
       renderMap(search.lat, search.lng, search.venues);
     }
-
-    // just for testing DELETE this for production
-    console.log(search);
   } catch (error) {
     clearLoader();
 
-    // geolocation error is rendered from helpers.js
-    renderError();
-
     // render api errors
-    console.log(error);
+    renderError();
+    // geolocation error is rendered from helpers.js
   }
 };
 

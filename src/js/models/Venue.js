@@ -2,8 +2,7 @@ import axios from 'axios';
 import { clientId, clientSecret } from '../helpers/config';
 
 export default class Venue {
-  // NIJE POTREBAN DEFAULT URL U PRAVOM REQUST
-  // OVO JE PRIVREMENO
+  // No need for default id
   constructor(id = '4c893ec5105237044947c7f1') {
     this.id = id;
     this.coords = []; // for lat and lng in buildMap()
@@ -11,10 +10,10 @@ export default class Venue {
     this.features = {};
   }
 
-  // PRIVREMENO DA NE BIH SLAO PREMIUM REQUEST
+  // For testing
   // 'https://api.myjson.com/bins/1h2v10'
 
-  // PRAVI URL
+  // Real URL
   // `https://api.foursquare.com/v2/venues/${this.id}?&v=20190323&client_id=${clientId}&client_secret=${clientSecret}`
 
   async getVenue() {
@@ -22,7 +21,6 @@ export default class Venue {
       const result = await axios('https://api.myjson.com/bins/1h2v10');
       // eslint-disable-next-line prefer-destructuring
       const venue = result.data.response.venue;
-      console.log(venue);
       this.coords[0] = result.data.response;
       this.attributes = venue && venue.attributes;
       this.address = venue && venue.location && venue.location.address;
@@ -93,8 +91,6 @@ export default class Venue {
         `${venue.bestPhoto.prefix}${venue.bestPhoto.width}x${venue.bestPhoto.height}${
           venue.bestPhoto.suffix
         }`;
-      // render map with new data
-      // buildMap(lat, lng);
     } catch (error) {}
   }
 }

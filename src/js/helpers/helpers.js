@@ -65,7 +65,7 @@ export const renderMap = (lat, lng, results) => {
         `<a href="venue.html?id=${el.venue.id}" title="View coffee shop details">${
           el.venue.name
         }</a>`,
-        { closeButton: false, closeOnClick: false }
+        { closeButton: false }
       )
       .on('click', clickZoom);
   });
